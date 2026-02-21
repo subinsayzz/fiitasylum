@@ -302,11 +302,12 @@ header.scrolled {
     position: relative;
     width: 100%;
     max-width: 900px;
-    /* Scaled up from 600px */
     margin-top: -5vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
+    /* Ensure wrapper stays above the headline */
 }
 
 .hero-model-img {
@@ -420,11 +421,11 @@ header.scrolled {
     position: absolute;
     width: 100%;
     left: 0;
-    top: 55%;
-    /* Centered vertically on the model */
+    top: 40%;
+    /* Repositioned to sit behind the head */
     transform: translateY(-50%);
-    z-index: 10;
-    /* Sits behind model limbs/torso potentially if adjusted */
+    z-index: 3;
+    /* Lowered to sit behind the model */
     pointer-events: none;
 }
 
