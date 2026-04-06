@@ -120,7 +120,7 @@
             </div>
 
             <div class="hero-cta-section animate-on-scroll" style="transition-delay: 0.2s;">
-                <a href="#contact" class="btn-fittex-primary">TRY FOR FREE <i class="fas fa-arrow-right"></i></a>
+                <a href="#contact" class="btn-fittex-primary">BOOK A TOUR <i class="fas fa-arrow-right"></i></a>
                 <a href="#training" class="btn-fittex-secondary">SCHEDULE TIME <i class="far fa-calendar-alt"></i></a>
             </div>
         </div>
@@ -215,7 +215,7 @@
                     </div>
                 </div>
 
-                <a href="#training" class="btn btn-primary"
+                <a href="about.html" class="btn btn-primary"
                     style="display: inline-flex; align-items: center; gap: 10px;">MORE ABOUT
                     US <i class="fas fa-arrow-right"></i></a>
             </div>
@@ -441,7 +441,7 @@
                                     FOR MORE INFO</div>
                                 <div
                                     style="font-family: var(--font-display); font-size: 1.2rem; line-height: 1; letter-spacing: 1px; color: #fff;">
-                                    +91 9207177701</div>
+                                    7509577577</div>
                             </div>
                         </div>
                     </div>
@@ -654,6 +654,36 @@
                     background: rgba(255, 255, 255, 0.05);
                     border-color: #fff;
                 }
+
+                .fittex-loc-card.metallic-premium {
+                    background: linear-gradient(145deg, #1c1c1c 0%, #0d0d0d 50%, #050505 100%);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    box-shadow: inset 0 1px 1px rgba(255,255,255,0.1), 0 15px 40px rgba(0,0,0,0.6);
+                }
+                
+                .fittex-loc-card.metallic-premium::before {
+                    background: linear-gradient(180deg, rgba(230, 0, 0, 0.1) 0%, transparent 100%);
+                    opacity: 0.5;
+                }
+                
+                .fittex-loc-card.metallic-premium:hover {
+                    border-color: rgba(230, 0, 0, 0.6);
+                    box-shadow: inset 0 1px 1px rgba(230,0,0,0.3), 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(230, 0, 0, 0.15);
+                    transform: translateY(-10px);
+                }
+                
+                .fittex-loc-card.metallic-premium:hover::before {
+                    opacity: 1;
+                    background: linear-gradient(180deg, rgba(230, 0, 0, 0.15) 0%, rgba(230, 0, 0, 0.02) 100%);
+                }
+                
+                .fittex-loc-card.metallic-premium .fittex-loc-watermark {
+                    color: rgba(230, 0, 0, 0.03);
+                }
+                
+                .fittex-loc-card.metallic-premium:hover .fittex-loc-watermark {
+                    color: rgba(230, 0, 0, 0.08);
+                }
             </style>
 
             <div class="fittex-locations-grid">
@@ -690,13 +720,13 @@
                 </div>
 
                 <!-- Location 2: Main Branch (Flagship) -->
-                <div class="fittex-loc-card animate-on-scroll" style="transition-delay: 0.1s;">
+                <div class="fittex-loc-card metallic-premium animate-on-scroll" style="transition-delay: 0.1s;">
                     <div class="fittex-loc-watermark">02</div>
                     <div class="fittex-loc-badge premium">
                         <i class="fas fa-crown"></i> Premium Flagship
                     </div>
                     <h3 class="fittex-loc-title">Zak's Gym Master Premium</h3>
-                    <div class="fittex-loc-subtitle premium">9000 sq ft - The Biggest Gym in Town</div>
+                    <div class="fittex-loc-subtitle premium">10,000 sq ft - The Biggest Gym in Town</div>
                     <p class="fittex-loc-desc">To further serve our members, we recently launched <strong>Zak's Gym
                             Master Premium</strong>—a massive top-tier flagship facility designed to be the ultimate
                         fitness destination.</p>
@@ -704,8 +734,9 @@
                     <ul class="fittex-loc-list">
                         <li>
                             <div class="fittex-loc-icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>Near Main Junction, Chalakudy, Kerala</div>
+                            <div>Zak's Gym Master, Tramway Road, 2nd Floor, Above Oxygen Digital World, Chalakudy</div>
                         </li>
+
                         <li>
                             <div class="fittex-loc-icon-wrap"><i class="fas fa-star"></i></div>
                             <div>Boutique experience for privacy and hand-holding</div>
@@ -882,13 +913,19 @@
             <style>
                 .premium-pricing-grid {
                     display: grid;
-                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-columns: repeat(3, 1fr);
                     gap: 30px;
-                    max-width: 1000px;
+                    max-width: 1200px;
                     margin: 0 auto;
                 }
 
-                @media (max-width: 800px) {
+                @media (max-width: 1000px) {
+                    .premium-pricing-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @media (max-width: 600px) {
                     .premium-pricing-grid {
                         grid-template-columns: 1fr;
                     }
@@ -1179,6 +1216,7 @@
                         <div class="tier-icon"><i class="fas fa-user-friends"></i></div>
                         <div class="tier-name">Couple<br>Membership</div>
                     </div>
+                    <p style="color: var(--text-gray); font-size: 0.82rem; margin: -10px 0 18px 0; letter-spacing: 0.5px;">Pricing is for <strong style="color:#fff;">2 members</strong></p>
 
                     <div class="pt-toggle-container">
                         <div class="toggle-slider"></div>
@@ -1225,6 +1263,62 @@
                             <span class="price-amount"><span class="strike">₹1,00,000</span>₹90,000</span>
                         </div>
                     </div>
+                </div>
+
+                <!-- Group Training Card -->
+                <div class="pricing-tier-card animate-on-scroll" id="group-card" style="transition-delay: 0.2s;">
+                    <div class="tier-header">
+                        <div class="tier-icon"><i class="fas fa-users"></i></div>
+                        <div class="tier-name">Group<br>Training</div>
+                    </div>
+                    <p style="color: var(--text-gray); font-size: 0.82rem; margin: -10px 0 18px 0; letter-spacing: 0.5px;">Pricing is <strong style="color:#fff;">Per Head</strong></p>
+
+                    <div class="pt-toggle-container">
+                        <div class="toggle-slider"></div>
+                        <div class="toggle-option active" onclick="togglePricing('group', 'general')">GT</div>
+                        <div class="toggle-option" onclick="togglePricing('group', 'pt')">PT</div>
+                    </div>
+
+                    <!-- Group Training (GT) Prices -->
+                    <div class="price-list active" id="group-general-prices">
+                        <div class="price-row">
+                            <span class="price-duration">1 Month</span>
+                            <span class="price-amount">₹3,000</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-duration">3 Months</span>
+                            <span class="price-amount">₹6,500</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-duration">6 Months</span>
+                            <span class="price-amount">₹11,000</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-duration">1 Year</span>
+                            <span class="price-amount">₹18,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Group Personal Training (PT) Prices -->
+                    <div class="price-list" id="group-pt-prices">
+                        <div class="price-row">
+                            <span class="price-duration">1 Month</span>
+                            <span class="price-amount">₹5,000</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-duration">3 Months</span>
+                            <span class="price-amount">₹12,000</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-duration">6 Months</span>
+                            <span class="price-amount">₹20,000</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-duration">1 Year</span>
+                            <span class="price-amount">₹35,000</span>
+                        </div>
+                    </div>
+                    <div class="pt-badge">With PT</div>
                 </div>
 
             </div>
@@ -1274,65 +1368,10 @@
                 }
             </style>
 
-            <!-- Group Personal Training (Banner below cards) -->
-            <div class="animate-on-scroll group-pt-banner"
-                style="margin-top: 40px; background: rgba(230,0,0,0.05); border: 1px solid rgba(230,0,0,0.2); border-radius: 20px; padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; position: relative; overflow: hidden;">
-
-                <!-- Background Accent -->
-                <div
-                    style="position: absolute; right: 0; top: 0; bottom: 0; width: 30%; background: linear-gradient(90deg, transparent, rgba(230,0,0,0.05)); pointer-events: none;">
-                </div>
-
-                <div style="position: relative; z-index: 1;">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <div
-                            style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-red); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; box-shadow: 0 0 15px rgba(230,0,0,0.4);">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3
-                            style="font-family: var(--font-display); font-size: 1.8rem; color: #fff; text-transform: uppercase; margin: 0; line-height: 1;">
-                            Group Personal Training</h3>
-                    </div>
-                    <p style="color: var(--text-gray); font-size: 1rem; margin: 0; max-width: 400px; line-height: 1.5;">
-                        Highly effective dynamic group sessions. <br><span
-                            style="color: var(--primary-red); font-weight: 600;">Pricing is strictly Per Head.</span>
-                    </p>
-                </div>
-
-                <div style="display: flex; gap: 15px; flex-wrap: wrap; position: relative; z-index: 1;">
-                    <div
-                        style="text-align: center; background: rgba(0,0,0,0.6); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); min-width: 120px;">
-                        <div
-                            style="font-size: 0.8rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
-                            1 Month</div>
-                        <div style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">₹5,000</div>
-                    </div>
-                    <div
-                        style="text-align: center; background: rgba(0,0,0,0.6); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); min-width: 120px;">
-                        <div
-                            style="font-size: 0.8rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
-                            3 Months</div>
-                        <div style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">₹12,000</div>
-                    </div>
-                    <div
-                        style="text-align: center; background: rgba(0,0,0,0.6); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); min-width: 120px;">
-                        <div
-                            style="font-size: 0.8rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
-                            6 Months</div>
-                        <div style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">₹20,000</div>
-                    </div>
-                    <div
-                        style="text-align: center; background: rgba(0,0,0,0.6); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); min-width: 120px;">
-                        <div
-                            style="font-size: 0.8rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
-                            1 Year</div>
-                        <div style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">₹35,000</div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
+
+
     <!-- Testimonials Section -->
     <section id="testimonials" class="section-padding"
         style="background-color: var(--bg-black); position: relative; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05);">
@@ -1914,7 +1953,7 @@
                             <h4
                                 style="font-family: var(--font-body); font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 5px;">
                                 Direct Line</h4>
-                            <p style="color: var(--text-gray); margin: 0; line-height: 1.5;">+91 9207177701<br><span
+                            <p style="color: var(--text-gray); margin: 0; line-height: 1.5;">7509577577<br><span
                                     style="font-size: 0.85rem; color: var(--primary-red);">24/7 Support Available</span>
                             </p>
                         </div>
@@ -1930,39 +1969,46 @@
 
                         <form id="leadForm">
                             <div class="fittex-form-group">
-                                <input type="text" class="fittex-input" placeholder="Full Name" required>
+                                <input type="text" name="first_name" class="fittex-input" placeholder="Full Name" required>
                             </div>
                             <div class="fittex-form-group">
-                                <input type="tel" class="fittex-input" placeholder="Phone Number" required>
+                                <input type="tel" name="phone" class="fittex-input" placeholder="Phone Number" required>
+                            </div>
+                            <div id="phoneError" style="display:none; color:#ff4444; font-size:0.82rem; margin: -12px 0 14px 4px;">
+                                ⚠️ Please enter a valid 10-digit Indian phone number.
                             </div>
 
                             <div style="display: flex; gap: 15px; margin-bottom: 20px;">
                                 <div style="flex: 1;">
-                                    <select class="fittex-input" required>
+                                    <select name="contact.primary_goal" class="fittex-input" required>
                                         <option value="" disabled selected>Primary Goal</option>
-                                        <option value="fat-loss">Fat Loss</option>
-                                        <option value="muscle-gain">Strength & Muscle</option>
-                                        <option value="posture">Posture correction</option>
-                                        <option value="general">General Fitness</option>
+                                        <option value="Fat Loss">Fat Loss</option>
+                                        <option value="Strength & Muscle">Strength & Muscle</option>
+                                        <option value="Posture Correction">Posture Correction</option>
+                                        <option value="General Fitness">General Fitness</option>
                                     </select>
                                 </div>
                                 <div style="flex: 1;">
-                                    <select class="fittex-input" required>
+                                    <select name="contact.preferred_location" class="fittex-input" required>
                                         <option value="" disabled selected>Location</option>
-                                        <option value="premium">Main Branch (Premium)</option>
-                                        <option value="main">Exclusive Studio</option>
+                                        <option value="Main Branch (Premium)">Main Branch (Premium)</option>
+                                        <option value="Exclusive Studio">Exclusive Studio</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="fittex-form-group">
-                                <select class="fittex-input" required>
+                                <select name="contact.preferred_training_time" class="fittex-input" required>
                                     <option value="" disabled selected>Preferred Training Time</option>
-                                    <option value="early-morning">Early Morning (5am - 9am)</option>
-                                    <option value="lunch">Mid-Day (11am - 3pm)</option>
-                                    <option value="evening">Evening (5pm - 9pm)</option>
-                                    <option value="late-night">Late Night Shift (10pm onwards)</option>
+                                    <option value="Early Morning (5am - 9am)">Early Morning (5am - 9am)</option>
+                                    <option value="Mid-Day (11am - 3pm)">Mid-Day (11am - 3pm)</option>
+                                    <option value="Evening (5pm - 9pm)">Evening (5pm - 9pm)</option>
+                                    <option value="Late Night Shift (10pm onwards)">Late Night Shift (10pm onwards)</option>
                                 </select>
+                            </div>
+
+                            <div id="leadFormSuccess" style="display:none; background: rgba(230,0,0,0.1); border: 1px solid rgba(230,0,0,0.3); border-radius: 10px; padding: 16px 20px; margin-bottom: 18px; color: #fff; font-size: 0.95rem; text-align: center;">
+                                ✅ Thank you! We'll be in touch shortly.
                             </div>
 
                             <button type="submit" class="fittex-submit">
@@ -2121,8 +2167,8 @@
                             style="color: #fff; font-size: 1.1rem; font-family: var(--font-body); margin-bottom: 8px; font-weight: 700;">
                             Zak's Gym Master Premium</h5>
                         <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            Near Main Junction,<br>
-                            Chalakudy, Kerala
+                            Zak's Gym Master, Tramway Road, 2nd Floor,<br>
+                            Above Oxygen Digital World, Chalakudy
                         </p>
                     </div>
                 </div>
@@ -2159,10 +2205,9 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="#" class="social-link-fittex"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link-fittex"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link-fittex"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link-fittex"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61571947777248" target="_blank" class="social-link-fittex"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/fitness.gymmaster/" target="_blank" class="social-link-fittex"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=917509577577&text=Hi%21+I%27d+like+to+visit+Zak%27s+Gym.+Can+I+get+directions+and+timing%3F&type=phone_number&app_absent=0" target="_blank" class="social-link-fittex"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -2170,6 +2215,75 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
+
+    <!-- Form Submit Handler + WhatsApp Redirect -->
+    <script>
+        (function () {
+            var form = document.getElementById('leadForm');
+            var submitBtn = form.querySelector('button[type="submit"]');
+            var phoneInput = form.querySelector('input[name="phone"]');
+            var phoneError = document.getElementById('phoneError');
+            var successMsg = document.getElementById('leadFormSuccess');
+            var allowSubmit = false;
+
+            submitBtn.addEventListener('click', function (e) {
+                if (allowSubmit) return; // already validated, let it go
+
+                var digits = phoneInput.value.replace(/[\s\-\+\(\)]/g, '');
+                var isValid = /^\d{10}$/.test(digits);
+
+                if (!isValid) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    phoneError.style.display = 'block';
+                    phoneInput.focus();
+                    return;
+                }
+
+                // Collect form values
+                var name     = form.querySelector('input[name="first_name"]').value.trim();
+                var phone    = phoneInput.value.trim();
+                var goal     = form.querySelector('select[name="contact.primary_goal"]').value;
+                var location = form.querySelector('select[name="contact.preferred_location"]').value;
+                var timeSlot = form.querySelector('select[name="contact.preferred_training_time"]').value;
+
+                // Build WhatsApp message
+                var msg = 'Hi! I\'d like to book a consultation at Zak\'s Gym Master.\n\n'
+                        + 'Name: '         + name     + '\n'
+                        + 'Phone: '        + phone    + '\n'
+                        + 'Location: '     + location + '\n'
+                        + 'Time Slot: '    + timeSlot + '\n'
+                        + 'Goal: '         + goal;
+
+                var waUrl = 'https://api.whatsapp.com/send/?phone=917509577577&text='
+                          + encodeURIComponent(msg)
+                          + '&type=phone_number&app_absent=0';
+
+                // Valid — clear error, set flag, allow CRM tracking to fire
+                phoneError.style.display = 'none';
+                allowSubmit = true;
+                successMsg.style.display = 'block';
+
+                // Open WhatsApp in new tab after a brief moment (let tracking fire first)
+                setTimeout(function () {
+                    window.open(waUrl, '_blank');
+                }, 300);
+
+                // Reset form after success message
+                setTimeout(function () {
+                    form.reset();
+                    successMsg.style.display = 'none';
+                    allowSubmit = false;
+                }, 4000);
+            });
+        })();
+    </script>
+
+    <!-- Gymrupt CRM Tracking -->
+    <script
+        src="https://rx.gymrupt.com/js/external-tracking.js"
+        data-tracking-id="tk_f31f941875404902b8ce2d1a69235c91">
+    </script>
 </body>
 
 </html>

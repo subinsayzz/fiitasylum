@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Zak's Gym Master</title>
+    <meta name="description" content="Learn the story behind Zak's Gym Master — our mission, values, and the journey from a 4,000 sq ft studio to Chalakudy's biggest gym at 10,000 sq ft.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ─── Page-level resets & tokens ─── */
+        :root {
+            --primary-red: #e60000;
+            --bg-black: #050505;
+            --bg-card: #0a0a0a;
+            --text-white: #ffffff;
+            --text-gray: #888;
+            --font-display: 'Anton', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--bg-black); color: var(--text-white); font-family: var(--font-body); }
+
+        /* ─── Nav (minimal, consistent with main) ─── */
+        .about-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(5,5,5,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 18px 40px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .about-nav .logo-wrap { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .about-nav .logo-wrap img { height: 40px; }
+        .about-nav .logo-wrap span {
+            font-family: var(--font-display); font-size: 1.3rem; color: #fff; letter-spacing: 1px;
+        }
+        .about-nav .back-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text-gray); text-decoration: none; font-size: 0.85rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .about-nav .back-btn:hover { color: #fff; }
+
+        /* ─── Hero ─── */
+        .about-hero {
+            min-height: 60vh;
+            display: flex; align-items: flex-end;
+            padding: 140px 40px 80px;
+            position: relative; overflow: hidden;
+            background: #000;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 60%, rgba(230,0,0,0.12) 0%, transparent 60%);
+        }
+        .about-hero-grid-bg {
+            position: absolute; inset: 0; opacity: 0.04;
+            background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .about-hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width:100%; }
+        .about-hero-eyebrow {
+            display: inline-block;
+            border: 1px solid var(--primary-red); color: var(--primary-red);
+            font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+            padding: 6px 18px; border-radius: 50px; margin-bottom: 24px;
+        }
+        .about-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 1; text-transform: uppercase; letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+        .about-hero-title .red { color: var(--primary-red); }
+        .about-hero-subtitle {
+            color: var(--text-gray); font-size: 1.1rem; max-width: 550px; line-height: 1.7;
+        }
+
+        /* ─── Sections ─── */
+        .about-section { padding: 100px 40px; }
+        .about-section .inner { max-width: 1200px; margin: 0 auto; }
+
+        /* ─── Section label ─── */
+        .section-label {
+            display: inline-flex; align-items: center; gap: 10px;
+            color: var(--primary-red); font-size: 0.75rem; font-weight: 800;
+            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;
+        }
+        .section-label::before {
+            content: ''; display: block; width: 30px; height: 2px;
+            background: var(--primary-red);
+        }
+
+        /* ─── Mission ─── */
+        .mission-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+        }
+        @media(max-width:900px){ .mission-grid { grid-template-columns: 1fr; } }
+
+        .mission-quote {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            line-height: 1.15; text-transform: uppercase;
+            border-left: 4px solid var(--primary-red); padding-left: 24px;
+        }
+        .mission-body { color: var(--text-gray); font-size: 1.05rem; line-height: 1.8; }
+        .mission-body p + p { margin-top: 16px; }
+        .mission-body strong { color: #fff; }
+
+        /* ─── Values ─── */
+        .values-section { background: #000; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .values-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px;
+        }
+        @media(max-width:900px){ .values-grid { grid-template-columns: 1fr; } }
+
+        .value-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 20px; padding: 40px;
+            position: relative; overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .value-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--primary-red); opacity: 0; transition: opacity 0.4s;
+        }
+        .value-card:hover { border-color: rgba(230,0,0,0.25); transform: translateY(-6px); }
+        .value-card:hover::before { opacity: 1; }
+
+        .value-icon {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: rgba(230,0,0,0.1); border: 1px solid rgba(230,0,0,0.2);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary-red); font-size: 1.3rem; margin-bottom: 20px;
+            transition: all 0.4s;
+        }
+        .value-card:hover .value-icon { background: var(--primary-red); color: #fff; }
+
+        .value-title {
+            font-family: var(--font-display); font-size: 1.5rem;
+            text-transform: uppercase; margin-bottom: 12px;
+        }
+        .value-desc { color: var(--text-gray); font-size: 0.95rem; line-height: 1.7; }
+
+        /* ─── Timeline ─── */
+        .timeline-section { background: var(--bg-black); }
+        .timeline-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            text-transform: uppercase; letter-spacing: -1px;
+            margin-bottom: 70px;
+        }
+        .timeline { position: relative; }
+        .timeline::before {
+            content: ''; position: absolute;
+            left: 50%; transform: translateX(-50%);
+            top: 0; bottom: 0; width: 2px;
+            background: linear-gradient(to bottom, var(--primary-red), rgba(230,0,0,0.05));
+        }
+        @media(max-width:768px){ .timeline::before { left: 20px; } }
+
+        .timeline-item {
+            display: grid; grid-template-columns: 1fr 60px 1fr;
+            gap: 0; align-items: center; margin-bottom: 60px;
+        }
+        @media(max-width:768px){
+            .timeline-item { grid-template-columns: 60px 1fr; }
+            .timeline-left { display: none; }
+        }
+
+        .timeline-left { text-align: right; padding-right: 40px; }
+        .timeline-right { padding-left: 40px; }
+        .timeline-item.alt .timeline-left { order: 3; text-align: left; padding-left: 40px; padding-right: 0; }
+        .timeline-item.alt .timeline-center { order: 2; }
+        .timeline-item.alt .timeline-right { order: 1; text-align: right; padding-right: 40px; padding-left: 0; }
+        @media(max-width:768px){
+            .timeline-item.alt .timeline-left { display: none; }
+            .timeline-item.alt .timeline-right { order: 2; text-align: left; padding-left: 40px; padding-right: 0; }
+            .timeline-item.alt .timeline-center { order: 1; }
+        }
+
+        .timeline-center { display: flex; flex-direction: column; align-items: center; position: relative; }
+        .timeline-dot {
+            width: 52px; height: 52px; border-radius: 50%;
+            background: var(--bg-card); border: 3px solid var(--primary-red);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary-red); font-size: 1.1rem;
+            box-shadow: 0 0 20px rgba(230,0,0,0.3); z-index: 2;
+            flex-shrink: 0;
+        }
+        .timeline-year {
+            font-family: var(--font-display); font-size: 0.85rem;
+            color: var(--primary-red); letter-spacing: 2px; text-transform: uppercase;
+            margin-top: 8px; white-space: nowrap;
+        }
+
+        .timeline-card {
+            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 16px; padding: 30px;
+            transition: all 0.4s; position:relative; overflow:hidden;
+        }
+        .timeline-card::after {
+            content:''; position:absolute; top:0; left:0; right:0; height:2px;
+            background: var(--primary-red); opacity:0.4;
+        }
+        .timeline-card:hover { border-color: rgba(230,0,0,0.3); transform: scale(1.02); }
+        .timeline-card .tc-tag {
+            display: inline-block; background: rgba(230,0,0,0.1); border: 1px solid rgba(230,0,0,0.2);
+            color: var(--primary-red); font-size: 0.7rem; font-weight: 800;
+            letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px;
+            border-radius: 50px; margin-bottom: 14px;
+        }
+        .timeline-card h3 {
+            font-family: var(--font-display); font-size: 1.6rem;
+            text-transform: uppercase; line-height: 1.1; margin-bottom: 10px;
+        }
+        .timeline-card p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.65; }
+        .timeline-card .stat {
+            font-family: var(--font-display); font-size: 2.5rem;
+            color: var(--primary-red); line-height: 1; margin: 12px 0 4px;
+        }
+
+        /* ─── CTA Banner ─── */
+        .about-cta-section {
+            padding: 100px 40px;
+            background: #000;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .about-cta-inner {
+            max-width: 800px; margin: 0 auto; text-align: center;
+        }
+        .about-cta-title {
+            font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem);
+            text-transform: uppercase; letter-spacing: -1px; line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .about-cta-title .red { color: var(--primary-red); }
+        .about-cta-sub {
+            color: var(--text-gray); font-size: 1.05rem; line-height: 1.7; margin-bottom: 40px;
+        }
+        .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+        .btn-wa {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #25D366; color: #fff;
+            padding: 16px 32px; border-radius: 8px;
+            font-family: var(--font-body); font-weight: 700; font-size: 0.9rem;
+            text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-wa:hover { background: #1ebe5c; box-shadow: 0 10px 20px rgba(37,211,102,0.3); transform: translateY(-2px); }
+
+        .btn-tour {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--primary-red); color: #fff;
+            padding: 16px 32px; border-radius: 8px;
+            font-family: var(--font-body); font-weight: 700; font-size: 0.9rem;
+            text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-tour:hover { background: #cc0000; box-shadow: 0 10px 20px rgba(230,0,0,0.3); transform: translateY(-2px); }
+
+        /* ─── Footer strip ─── */
+        .about-footer {
+            background: #000; border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 24px 40px; text-align: center;
+            color: var(--text-gray); font-size: 0.8rem;
+        }
+        .about-footer a { color: var(--primary-red); text-decoration: none; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <nav class="about-nav">
+        <a href="index.html" class="logo-wrap">
+            <img src="gymmaster.png" alt="Zak's Gym Master Logo">
+            <span>ZAK'S GYM MASTER</span>
+        </a>
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="about-hero">
+        <div class="about-hero-grid-bg"></div>
+        <div class="about-hero-content">
+            <div class="about-hero-eyebrow">Our Story</div>
+            <h1 class="about-hero-title">
+                Built For <span class="red">Results.</span><br>Driven By <span class="red">People.</span>
+            </h1>
+            <p class="about-hero-subtitle">
+                From a single studio to Chalakudy's biggest gym — this is the story of Zak's Gym Master.
+            </p>
+        </div>
+    </section>
+
+    <!-- Image Collage -->
+    <section style="background:#000; padding: 80px 40px;">
+        <div style="max-width:1200px; margin:0 auto;">
+
+            <style>
+                .collage-grid {
+                    display: grid;
+                    grid-template-columns: 1.4fr 1fr 1fr;
+                    grid-template-rows: 280px 280px;
+                    gap: 14px;
+                    border-radius: 24px;
+                    overflow: hidden;
+                }
+                @media(max-width:768px){
+                    .collage-grid {
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: 220px 220px 220px;
+                    }
+                }
+                @media(max-width:480px){
+                    .collage-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+                }
+                .collage-cell {
+                    position: relative; overflow: hidden; border-radius: 16px;
+                    cursor: pointer;
+                }
+                .collage-cell img {
+                    width: 100%; height: 100%; object-fit: cover;
+                    transition: transform 0.6s ease;
+                    display: block;
+                }
+                .collage-cell:hover img { transform: scale(1.07); }
+                .collage-cell .overlay {
+                    position: absolute; inset:0;
+                    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+                    opacity: 0; transition: opacity 0.4s;
+                }
+                .collage-cell:hover .overlay { opacity: 1; }
+                .collage-cell .cell-label {
+                    position: absolute; bottom: 16px; left: 18px; right: 18px;
+                    font-family: var(--font-display); font-size: 1.1rem; color: #fff;
+                    text-transform: uppercase; letter-spacing: 1px;
+                    opacity: 0; transform: translateY(10px); transition: all 0.4s;
+                }
+                .collage-cell:hover .cell-label { opacity: 1; transform: translateY(0); }
+
+                /* big hero cell spans 2 rows */
+                .collage-cell-hero { grid-row: span 2; }
+
+                /* stat badge */
+                .collage-badge {
+                    position: absolute; top: 16px; right: 16px;
+                    background: var(--primary-red); color: #fff;
+                    font-family: var(--font-display); font-size: 0.75rem;
+                    letter-spacing: 1.5px; text-transform: uppercase;
+                    padding: 6px 14px; border-radius: 50px;
+                    box-shadow: 0 4px 20px rgba(230,0,0,0.4);
+                }
+                /* red line accent */
+                .collage-accent-bar {
+                    width: 50px; height: 4px; background: var(--primary-red);
+                    border-radius: 2px; margin-bottom: 14px;
+                }
+            </style>
+
+            <div class="collage-accent-bar"></div>
+            <p style="font-family:var(--font-display); font-size:clamp(1.5rem,3vw,2.2rem);
+                      text-transform:uppercase; letter-spacing:-0.5px; margin-bottom:30px;">
+                Inside <span style="color:var(--primary-red);">The Floor</span>
+            </p>
+
+            <div class="collage-grid">
+
+                <!-- Big hero cell — left, spans 2 rows -->
+                <div class="collage-cell collage-cell-hero">
+                    <img src="assets/gym_hero_indian_1771616473307.png" alt="Zak's Gym Master floor">
+                    <div class="overlay"></div>
+                    <div class="collage-badge">10,000 sq ft</div>
+                    <div class="cell-label">The Main Floor</div>
+                </div>
+
+                <!-- Top-right -->
+                <div class="collage-cell">
+                    <img src="assets/gym_interior_red_machines_1771619361464.png" alt="Equipment">
+                    <div class="overlay"></div>
+                    <div class="cell-label">Premium Equipment</div>
+                </div>
+
+                <!-- Top far-right -->
+                <div class="collage-cell">
+                    <img src="assets/indian_premium_trainer_1771621158771.png" alt="Personal Training">
+                    <div class="overlay"></div>
+                    <div class="collage-badge">Expert Coaches</div>
+                    <div class="cell-label">1-on-1 Training</div>
+                </div>
+
+                <!-- Bottom-right -->
+                <div class="collage-cell">
+                    <img src="assets/indian_group_training_premium.png" alt="Group Training">
+                    <div class="overlay"></div>
+                    <div class="cell-label">Group Training</div>
+                </div>
+
+                <!-- Bottom far-right -->
+                <div class="collage-cell">
+                    <img src="assets/indian_lady_training_gym_1771619327419.png" alt="Members Training">
+                    <div class="overlay"></div>
+                    <div class="cell-label">For Everyone</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission -->
+
+    <section class="about-section" style="background: var(--bg-black); border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="inner">
+            <div class="mission-grid">
+                <div>
+                    <div class="section-label">Our Mission</div>
+                    <h2 class="mission-quote">
+                        We exist to make<br>serious fitness<br><span style="color:var(--primary-red);">accessible to all.</span>
+                    </h2>
+                </div>
+                <div class="mission-body">
+                    <p>Zak's Gym Master was born from one simple belief: <strong>every person deserves world-class coaching, not just those who can afford premium prices.</strong> We built our gym to close that gap — a place where families, couples, students, and working professionals all train under the same roof, guided by expert coaches.</p>
+                    <p>We are not a mass-market gym floor. We are a coaching environment — where every member has a goal, a plan, and a trainer who knows their name.</p>
+                    <p><strong>What we stand for:</strong> Honest coaching. Real results. A community that pushes each other forward. No gimmicks, no shortcuts — just structured training done right.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="about-section values-section">
+        <div class="inner">
+            <div class="section-label">Our Values</div>
+            <h2 style="font-family:var(--font-display); font-size:clamp(2rem,4vw,3rem); text-transform:uppercase; letter-spacing:-1px; margin-bottom:0;">
+                What We <span style="color:var(--primary-red);">Stand For</span>
+            </h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3 class="value-title">Results First</h3>
+                    <p class="value-desc">Every decision — from equipment to programming to coaching hours — is made with one question: will this deliver better results for our members?</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3 class="value-title">Community</h3>
+                    <p class="value-desc">We're not a transactional gym. Members check on each other, trainers remember personal bests, and progress is celebrated together. That culture is non-negotiable.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="value-title">Integrity</h3>
+                    <p class="value-desc">Transparent pricing, honest coaching assessments, and no upselling what you don't need. We'd rather lose business than give you bad advice.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3 class="value-title">Expert Guidance</h3>
+                    <p class="value-desc">Every trainer on our floor is certified, experienced, and continuously trained. We invest in our coaches so that our coaches can invest in you.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-heart"></i></div>
+                    <h3 class="value-title">Inclusivity</h3>
+                    <p class="value-desc">Beginners, seniors, couples, athletes — all are welcome. Our programs are designed to meet people where they are, not where we wish they were.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="value-title">Continuous Growth</h3>
+                    <p class="value-desc">We're building something long-term — for our members and ourselves. Better facilities, better programs, better outcomes. Every year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="about-section timeline-section">
+        <div class="inner">
+            <div class="section-label">Our Journey</div>
+            <h2 class="timeline-title">From One Studio<br><span style="color:var(--primary-red);">To A Movement.</span></h2>
+            <div class="timeline">
+
+                <!-- 1: Founded -->
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <!-- empty on right-side items -->
+                    </div>
+                    <div class="timeline-center">
+                        <div class="timeline-dot"><i class="fas fa-flag"></i></div>
+                        <div class="timeline-year">2024</div>
+                    </div>
+                    <div class="timeline-right">
+                        <div class="timeline-card">
+                            <span class="tc-tag">The Beginning</span>
+                            <h3>Doors Open</h3>
+                            <div class="stat">4,000 sq ft</div>
+                            <p>Zak's Gym Master launched its first location — a 4,000 sq ft coaching studio in Chalakudy. Built with a clear focus on personal training and family-friendly fitness, from day one we chose depth over breadth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2: 500 members -->
+                <div class="timeline-item alt">
+                    <div class="timeline-left">
+                        <div class="timeline-card">
+                            <span class="tc-tag">Milestone</span>
+                            <h3>500 Active Members</h3>
+                            <div class="stat">500+</div>
+                            <p>Within months of opening, we crossed 500 active members. Word spread organically — not from ads, but from members whose lives were genuinely changing.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-center">
+                        <div class="timeline-dot"><i class="fas fa-users"></i></div>
+                        <div class="timeline-year">2024</div>
+                    </div>
+                    <div class="timeline-right"></div>
+                </div>
+
+                <!-- 3: 1000 members -->
+                <div class="timeline-item">
+                    <div class="timeline-left"></div>
+                    <div class="timeline-center">
+                        <div class="timeline-dot"><i class="fas fa-trophy"></i></div>
+                        <div class="timeline-year">2024</div>
+                    </div>
+                    <div class="timeline-right">
+                        <div class="timeline-card">
+                            <span class="tc-tag">Community Validated</span>
+                            <h3>1,000 Members</h3>
+                            <div class="stat">1,000+</div>
+                            <p>Crossed 1,000 active members — a milestone that validated the approach of quality coaching over mass-market gym culture. Chalakudy was ready for something better, and we delivered it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4: Premium launch -->
+                <div class="timeline-item alt">
+                    <div class="timeline-left">
+                        <div class="timeline-card">
+                            <span class="tc-tag">Flagship Launch</span>
+                            <h3>Zak's Gym Master Premium</h3>
+                            <div class="stat">10,000 sq ft</div>
+                            <p>We launched our Premium flagship — a 10,000 sq ft facility at Tramway Road, 2nd Floor, Chalakudy. The biggest gym in Chalakudy, designed as the ultimate fitness destination for the city and beyond.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-center">
+                        <div class="timeline-dot"><i class="fas fa-crown"></i></div>
+                        <div class="timeline-year">2026</div>
+                    </div>
+                    <div class="timeline-right"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta-section">
+        <div class="about-cta-inner">
+            <div style="display:inline-block; border:1px solid var(--primary-red); color:var(--primary-red); font-size:0.75rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:6px 18px; border-radius:50px; margin-bottom:24px;">
+                Ready to Start?
+            </div>
+            <h2 class="about-cta-title">
+                Your Best Self<br>Is <span class="red">Waiting Here.</span>
+            </h2>
+            <p class="about-cta-sub">
+                Come visit us, see the facility, meet the coaches. No pressure — just a conversation about your goals.
+            </p>
+            <div class="cta-row">
+                <a href="https://api.whatsapp.com/send/?phone=917509577577&text=Hi%21+I%27d+like+to+know+more+about+Zak%27s+Gym+Master.&type=phone_number&app_absent=0"
+                   target="_blank" class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <a href="index.html#contact" class="btn-tour">
+                    <i class="fas fa-calendar-check"></i> Book a Tour
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer strip -->
+    <footer class="about-footer">
+        &copy; <span id="yr"></span> ZAK'S GYM MASTER. ALL RIGHTS RESERVED.
+        &nbsp;|&nbsp; <a href="index.html">Back to Home</a>
+    </footer>
+
+    <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
