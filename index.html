@@ -87,11 +87,11 @@
     </section>
 
     <!-- Trust / Social Proof Bar -->
-    <div class="trust-bar animate-on-scroll">
+    <div class="trust-bar">
         <div class="container trust-content">
             <div class="trust-item"><i class="fas fa-users"></i> 1000+ Active Members</div>
             <div class="trust-item"><i class="fas fa-user-md"></i> Trusted by Doctors & IT Pros</div>
-            <div class="trust-item"><i class="fas fa-clock"></i> 24/7 Access for Shift Workers</div>
+            <div class="trust-item"><i class="fas fa-heart"></i> Community-Driven Coaching Culture</div>
             <div class="trust-item"><i class="fas fa-child"></i> Family-Friendly Environment</div>
         </div>
     </div>
@@ -734,7 +734,7 @@
                         </li>
                         <li>
                             <div class="fittex-loc-icon-wrap"><i class="fas fa-clock"></i></div>
-                            <div>Open 24/7, 365 days a year</div>
+                            <div>Operating Hours: Mon-Sat, 5AM-12PM</div>
                         </li>
                         <li>
                             <div class="fittex-loc-icon-wrap"><i class="fas fa-users"></i></div>
@@ -1446,12 +1446,10 @@
             <style>
                 .testimonial-carousel-container {
                     display: flex;
-                    overflow-x: auto;
-                    overflow-y: hidden;
+                    overflow: hidden;
                     padding-bottom: 20px;
                     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
                     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-                    scroll-behavior: smooth;
                 }
 
                 .testimonial-track {
@@ -1800,48 +1798,50 @@
                     <span>Join the <mark>Family</mark></span>
                     <span>Top-Tier <mark>Gear</mark></span>
                     <span>Expert <mark>Guidance</mark></span>
-                    <span>24/7 <mark>Access</mark></span>
+                    <span>Community <mark>First</mark></span>
                     <!-- Repeat for seamless loop -->
                     <span>Real <mark>People</mark></span>
                     <span>Real <mark>Results</mark></span>
                     <span>Join the <mark>Family</mark></span>
                     <span>Top-Tier <mark>Gear</mark></span>
                     <span>Expert <mark>Guidance</mark></span>
-                    <span>24/7 <mark>Access</mark></span>
+                    <span>Community <mark>First</mark></span>
                 </div>
             </div>
 
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     const track = document.getElementById('testimonialCarouselTrack');
-                    const container = document.querySelector('.testimonial-carousel-container');
                     const prevBtn = document.getElementById('prevTestimonial');
                     const nextBtn = document.getElementById('nextTestimonial');
 
-                    if (track && container && prevBtn && nextBtn) {
-                        const card = track.querySelector('.testimonial-card');
-                        const gap = 30;
-                        const skipAmount = (card ? card.offsetWidth : 320) + gap;
-                        let resumeTimer = null;
+                    if (track && prevBtn && nextBtn) {
+                        if (!track.dataset.loopReady) {
+                            const originalCards = Array.from(track.children);
+                            originalCards.forEach((card) => {
+                                track.appendChild(card.cloneNode(true));
+                            });
+                            track.dataset.loopReady = 'true';
+                        }
 
-                        const pauseAutoScroll = () => {
-                            track.style.animationPlayState = 'paused';
-                            if (resumeTimer) {
-                                window.clearTimeout(resumeTimer);
-                            }
-                            resumeTimer = window.setTimeout(() => {
-                                track.style.animationPlayState = 'running';
-                            }, 5000);
+                        const shiftNext = () => {
+                            const firstCard = track.firstElementChild;
+                            if (!firstCard) return;
+                            track.appendChild(firstCard);
+                        };
+
+                        const shiftPrev = () => {
+                            const lastCard = track.lastElementChild;
+                            if (!lastCard) return;
+                            track.insertBefore(lastCard, track.firstElementChild);
                         };
 
                         prevBtn.addEventListener('click', () => {
-                            pauseAutoScroll();
-                            container.scrollBy({ left: -skipAmount, behavior: 'smooth' });
+                            shiftPrev();
                         });
 
                         nextBtn.addEventListener('click', () => {
-                            pauseAutoScroll();
-                            container.scrollBy({ left: skipAmount, behavior: 'smooth' });
+                            shiftNext();
                         });
                     }
                 });
@@ -2005,7 +2005,7 @@
                                 style="font-family: var(--font-body); font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 5px;">
                                 Direct Line</h4>
                             <p style="color: var(--text-gray); margin: 0; line-height: 1.5;">7509577577<br><span
-                                    style="font-size: 0.85rem; color: var(--primary-red);">24/7 Support Available</span>
+                                    style="font-size: 0.85rem; color: var(--primary-red);">Mon-Sat: 5AM-12PM</span>
                             </p>
                         </div>
                     </div>
@@ -2232,10 +2232,10 @@
                         <div
                             style="display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 15px;">
                             <span style="color: #fff; font-weight: 600;">Mon - Sat</span>
-                            <span style="color: var(--primary-red); font-weight: 700;">24 Hours</span>
+                            <span style="color: var(--primary-red); font-weight: 700;">5AM - 12PM</span>
                         </div>
                         <p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.5; margin: 0;">
-                            Main Branch is open 24/7/365. <br>Exclusive Studio hours may vary.
+                            Community-focused coaching hours for better trainer support and member attention.
                         </p>
                     </div>
 
@@ -2243,7 +2243,7 @@
                         <div
                             style="display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 15px;">
                             <span style="color: #fff; font-weight: 600;">Sunday</span>
-                            <span style="color: var(--primary-red); font-weight: 700;">Open</span>
+                            <span style="color: var(--primary-red); font-weight: 700;">Closed</span>
                         </div>
                     </div>
                 </div>
