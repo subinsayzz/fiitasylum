@@ -79,12 +79,6 @@
             <p class="hero-subtitle">World-class equipment, expert coaching, and a serious training atmosphere built for
                 real results.</p>
 
-            <div class="hero-stat-strip">
-                <span><i class="fas fa-clock"></i> 24/7 Access</span>
-                <span><i class="fas fa-users"></i> 1000+ Active Members</span>
-                <span><i class="fas fa-dumbbell"></i> Elite Training Zones</span>
-            </div>
-
             <div class="hero-cta-section hero-cta-inline">
                 <a href="#contact" class="btn-fittex-primary">BOOK A TOUR <i class="fas fa-arrow-right"></i></a>
                 <a href="#training" class="btn-fittex-secondary">EXPLORE PROGRAMS <i class="far fa-calendar-alt"></i></a>
@@ -1452,10 +1446,12 @@
             <style>
                 .testimonial-carousel-container {
                     display: flex;
-                    overflow: hidden;
+                    overflow-x: auto;
+                    overflow-y: hidden;
                     padding-bottom: 20px;
                     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
                     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+                    scroll-behavior: smooth;
                 }
 
                 .testimonial-track {
@@ -1818,21 +1814,35 @@
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     const track = document.getElementById('testimonialCarouselTrack');
+                    const container = document.querySelector('.testimonial-carousel-container');
                     const prevBtn = document.getElementById('prevTestimonial');
                     const nextBtn = document.getElementById('nextTestimonial');
 
-                    if (track && prevBtn && nextBtn) {
-                        const skipAmount = 350;
+                    if (track && container && prevBtn && nextBtn) {
+                        const card = track.querySelector('.testimonial-card');
+                        const gap = 30;
+                        const skipAmount = (card ? card.offsetWidth : 320) + gap;
+                        let resumeTimer = null;
+
+                        const pauseAutoScroll = () => {
+                            track.style.animationPlayState = 'paused';
+                            if (resumeTimer) {
+                                window.clearTimeout(resumeTimer);
+                            }
+                            resumeTimer = window.setTimeout(() => {
+                                track.style.animationPlayState = 'running';
+                            }, 5000);
+                        };
 
                         prevBtn.addEventListener('click', () => {
-                            // Since it's a marquee now, manual buttons will just "jog" the scroll
-                            track.style.transition = 'transform 0.5s ease';
-                            // We use a simplified JS shift if they want manual control, 
-                            // but usually marquees are best left to their own motion.
+                            pauseAutoScroll();
+                            container.scrollBy({ left: -skipAmount, behavior: 'smooth' });
                         });
 
-                        // For a clean marquee, we usually disable manual arrows 
-                        // or have them skip sections. For now, let's just keep them for accessibility.
+                        nextBtn.addEventListener('click', () => {
+                            pauseAutoScroll();
+                            container.scrollBy({ left: skipAmount, behavior: 'smooth' });
+                        });
                     }
                 });
             </script>
