@@ -434,24 +434,13 @@
                     .fittex-locations-grid {
                         grid-template-columns: 1fr;
                     }
-
-                    .fittex-gallery-trigger,
-                    .fittex-tour-trigger {
-                        top: 16px;
-                        right: 16px;
-                    }
-
-                    .fittex-gallery-trigger .label,
-                    .fittex-tour-trigger .label {
-                        display: none;
-                    }
                 }
 
                 .fittex-loc-card {
                     background: #0a0a0a;
                     border: 1px solid rgba(255, 255, 255, 0.03);
                     border-radius: 20px;
-                    padding: 50px;
+                    padding: 28px;
                     position: relative;
                     overflow: hidden;
                     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -498,6 +487,77 @@
                 .fittex-loc-card:hover .fittex-loc-watermark {
                     color: rgba(230, 0, 0, 0.04);
                     transform: scale(1.05) rotate(2deg);
+                }
+
+                .fittex-loc-preview {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 16 / 10;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    margin-bottom: 22px;
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                    background: #000;
+                }
+
+                .fittex-loc-preview iframe,
+                .fittex-loc-preview img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    border: 0;
+                }
+
+                .fittex-loc-preview img {
+                    object-fit: cover;
+                }
+
+                .fittex-loc-preview-tag {
+                    position: absolute;
+                    left: 12px;
+                    top: 12px;
+                    z-index: 2;
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 0.72rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    background: rgba(8, 8, 8, 0.92);
+                    border: 1px solid rgba(255, 255, 255, 0.18);
+                    padding: 7px 10px;
+                    border-radius: 999px;
+                }
+
+                .fittex-loc-preview-overlay {
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.12) 68%);
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    padding: 16px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 0.74rem;
+                    font-weight: 700;
+                }
+
+                .fittex-loc-preview-overlay span {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    background: rgba(8, 8, 8, 0.94);
+                    border: 1px solid rgba(255, 255, 255, 0.22);
+                    border-radius: 999px;
+                    padding: 8px 12px;
+                    transition: all 0.25s ease;
+                }
+
+                .fittex-loc-preview--gallery:hover .fittex-loc-preview-overlay span {
+                    transform: translateY(-1px);
+                    border-color: rgba(230, 0, 0, 0.55);
                 }
 
                 .fittex-loc-badge {
@@ -552,7 +612,7 @@
                 .fittex-loc-list {
                     list-style: none;
                     padding: 0;
-                    margin: 0 0 40px 0;
+                    margin: 0 0 30px 0;
                     display: flex;
                     flex-direction: column;
                     gap: 15px;
@@ -626,122 +686,6 @@
                     border-color: #fff;
                 }
 
-                .fittex-gallery-trigger {
-                    position: absolute;
-                    top: 22px;
-                    right: 22px;
-                    z-index: 20;
-                    width: 42px;
-                    height: 42px;
-                    border-radius: 50%;
-                    background: rgba(10, 10, 10, 0.9);
-                    border: 1px solid rgba(255, 255, 255, 0.22);
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    text-decoration: none;
-                    animation: galleryBlink 1.8s infinite;
-                    box-shadow: 0 0 0 rgba(230, 0, 0, 0);
-                }
-
-                .fittex-gallery-trigger i {
-                    color: var(--primary-red);
-                    font-size: 1rem;
-                }
-
-                .fittex-tour-trigger {
-                    position: absolute;
-                    top: 22px;
-                    right: 22px;
-                    z-index: 20;
-                    width: 42px;
-                    height: 42px;
-                    border-radius: 50%;
-                    background: rgba(10, 10, 10, 0.9);
-                    border: 1px solid rgba(255, 255, 255, 0.22);
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    text-decoration: none;
-                    animation: galleryBlink 1.8s infinite;
-                    box-shadow: 0 0 0 rgba(230, 0, 0, 0);
-                }
-
-                .fittex-tour-trigger span {
-                    color: var(--primary-red);
-                    font-size: 0.85rem;
-                    font-weight: 700;
-                    line-height: 1;
-                    letter-spacing: 0.4px;
-                }
-
-                .fittex-tour-trigger .label {
-                    position: absolute;
-                    right: 52px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    white-space: nowrap;
-                    color: #fff;
-                    font-weight: 700;
-                    font-size: 0.72rem;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    background: rgba(8, 8, 8, 0.95);
-                    border: 1px solid rgba(255, 255, 255, 0.18);
-                    padding: 7px 10px;
-                    border-radius: 999px;
-                    opacity: 0;
-                    pointer-events: none;
-                    transition: all 0.25s ease;
-                }
-
-                .fittex-tour-trigger:hover .label {
-                    opacity: 1;
-                    transform: translateY(-50%) translateX(-2px);
-                }
-
-                .fittex-tour-trigger:hover {
-                    border-color: rgba(230, 0, 0, 0.65);
-                    transform: scale(1.05);
-                    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
-                }
-
-                .fittex-gallery-trigger .label {
-                    position: absolute;
-                    right: 52px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    white-space: nowrap;
-                    color: #fff;
-                    font-weight: 700;
-                    font-size: 0.72rem;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    background: rgba(8, 8, 8, 0.95);
-                    border: 1px solid rgba(255, 255, 255, 0.18);
-                    padding: 7px 10px;
-                    border-radius: 999px;
-                    opacity: 0;
-                    pointer-events: none;
-                    transition: all 0.25s ease;
-                }
-
-                .fittex-gallery-trigger:hover .label {
-                    opacity: 1;
-                    transform: translateY(-50%) translateX(-2px);
-                }
-
-                .fittex-gallery-trigger:hover {
-                    border-color: rgba(230, 0, 0, 0.65);
-                    transform: scale(1.05);
-                    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
-                }
-
-                @keyframes galleryBlink {
-                    0%, 100% { box-shadow: 0 0 0 0 rgba(230, 0, 0, 0); }
-                    50% { box-shadow: 0 0 0 8px rgba(230, 0, 0, 0.18); }
-                }
-
                 .fittex-loc-card.metallic-premium {
                     background: linear-gradient(145deg, #1c1c1c 0%, #0d0d0d 50%, #050505 100%);
                     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -778,13 +722,18 @@
                 <!-- Location 1: Original Studio -->
                 <div class="fittex-loc-card animate-on-scroll">
                     <div class="fittex-loc-watermark">01</div>
+                    <div class="fittex-loc-preview fittex-loc-preview--tour">
+                        <iframe id="tour-embeded" name="Zak's Gym Master" src="https://tour.panoee.net/iframe/gymmaster"
+                            frameBorder="0" width="100%" height="400px" scrolling="no" allowvr="yes"
+                            allow="vr; xr; accelerometer; gyroscope; autoplay;" allowFullScreen="false"
+                            webkitallowfullscreen="false" mozallowfullscreen="false" loading="eager"></iframe>
+                        <span class="fittex-loc-preview-tag">360 Virtual Tour</span>
+                    </div>
                     <div class="fittex-loc-badge">
                         <i class="fas fa-home"></i> Family & Coaching Studio
                     </div>
                     <h3 class="fittex-loc-title">Zak's Gym Master</h3>
                     <div class="fittex-loc-subtitle">4000 sq ft - The Original Home of Fitness</div>
-                    <p class="fittex-loc-desc">Our original location, now an upgraded experience for those who want a
-                        strong trainer presence and a family-focused environment.</p>
 
                     <ul class="fittex-loc-list">
                         <li>
@@ -795,18 +744,7 @@
                             <div class="fittex-loc-icon-wrap"><i class="fas fa-clock"></i></div>
                             <div>Operating Hours: Mon-Sat, 5AM-12PM</div>
                         </li>
-                        <li>
-                            <div class="fittex-loc-icon-wrap"><i class="fas fa-users"></i></div>
-                            <div>Unisex, family-friendly with intense Personal Training focus</div>
-                        </li>
                     </ul>
-
-                    <a href="#" id="openOriginalTour" class="fittex-tour-trigger" aria-label="Open 360 virtual tour">
-                        <span>360°</span>
-                        <span class="label">
-                            <span>Virtual Tour</span>
-                        </span>
-                    </a>
 
                     <a href="https://maps.google.com" target="_blank" class="fittex-btn secondary">
                         Get Directions <i class="fas fa-arrow-right"></i>
@@ -816,14 +754,19 @@
                 <!-- Location 2: Main Branch (Flagship) -->
                 <div class="fittex-loc-card metallic-premium animate-on-scroll" style="transition-delay: 0.1s;">
                     <div class="fittex-loc-watermark">02</div>
+                    <a href="#" id="openPremiumGallery" class="fittex-loc-preview fittex-loc-preview--gallery"
+                        aria-label="Open premium gallery">
+                        <img src="assets/premium-gallery-original/01.jpg?v=1" alt="Zak's Gym Master Premium Preview"
+                            loading="lazy">
+                        <div class="fittex-loc-preview-overlay">
+                            <span>Checkout The Space <i class="fas fa-images"></i></span>
+                        </div>
+                    </a>
                     <div class="fittex-loc-badge premium">
                         <i class="fas fa-crown"></i> Premium Flagship
                     </div>
                     <h3 class="fittex-loc-title">Zak's Gym Master Premium</h3>
                     <div class="fittex-loc-subtitle premium">10,000 sq ft - The Biggest Gym in Town</div>
-                    <p class="fittex-loc-desc">To further serve our members, we recently launched <strong>Zak's Gym
-                            Master Premium</strong>—a massive top-tier flagship facility designed to be the ultimate
-                        fitness destination.</p>
 
                     <ul class="fittex-loc-list">
                         <li>
@@ -835,18 +778,7 @@
                             <div class="fittex-loc-icon-wrap"><i class="fas fa-star"></i></div>
                             <div>Boutique experience for privacy and hand-holding</div>
                         </li>
-                        <li>
-                            <div class="fittex-loc-icon-wrap"><i class="fas fa-heart"></i></div>
-                            <div>Perfect for couples, parents & senior pros</div>
-                        </li>
                     </ul>
-
-                    <a href="#" id="openPremiumGallery" class="fittex-gallery-trigger">
-                        <span class="label">
-                            <span>Checkout The Space</span>
-                        </span>
-                        <i class="fas fa-images"></i>
-                    </a>
 
                     <a href="#contact" class="fittex-btn primary">
                         Book Consultation <i class="fas fa-calendar-check"></i>
@@ -2359,28 +2291,6 @@
             </div>
             <div class="premium-gallery-carousel__meta">
                 <span id="premiumGalleryCounter">1 / 11</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Original Location 360 Virtual Tour Modal -->
-    <div id="originalTourModal" class="premium-gallery-modal" aria-hidden="true">
-        <div class="premium-gallery-modal__backdrop" data-close-tour="true"></div>
-        <div class="premium-gallery-modal__dialog premium-gallery-modal__dialog--tour" role="dialog" aria-modal="true"
-            aria-label="Zak's Gym Master 360 Virtual Tour">
-            <button type="button" id="closeOriginalTour" class="premium-gallery-modal__close"
-                aria-label="Close virtual tour">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="premium-gallery-modal__head">
-                <h3>Zak's Gym Master</h3>
-                <p>360 Virtual Tour</p>
-            </div>
-            <div class="virtual-tour-wrap">
-                <iframe id="tour-embeded" name="Zak's Gym Master" src="https://tour.panoee.net/iframe/gymmaster"
-                    frameBorder="0" width="100%" height="400px" scrolling="no" allowvr="yes"
-                    allow="vr; xr; accelerometer; gyroscope; autoplay;" allowFullScreen="false"
-                    webkitallowfullscreen="false" mozallowfullscreen="false" loading="eager"></iframe>
             </div>
         </div>
     </div>

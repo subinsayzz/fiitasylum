@@ -230,50 +230,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Original Location 360 Virtual Tour Popup ---
-    const openOriginalTourBtn = document.getElementById('openOriginalTour');
-    const originalTourModal = document.getElementById('originalTourModal');
-    const closeOriginalTourBtn = document.getElementById('closeOriginalTour');
+    // --- Original Location 360 Motion Forwarding ---
     const pano_iframe_name = 'tour-embeded';
-
-    const openOriginalTour = () => {
-        if (!originalTourModal) return;
-        originalTourModal.classList.add('is-open');
-        originalTourModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    };
-
-    const closeOriginalTour = () => {
-        if (!originalTourModal) return;
-        originalTourModal.classList.remove('is-open');
-        originalTourModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    };
-
-    if (openOriginalTourBtn) {
-        openOriginalTourBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openOriginalTour();
-        });
-    }
-
-    if (closeOriginalTourBtn) {
-        closeOriginalTourBtn.addEventListener('click', closeOriginalTour);
-    }
-
-    if (originalTourModal) {
-        originalTourModal.addEventListener('click', (e) => {
-            if (e.target === originalTourModal || e.target.closest('[data-close-tour="true"]')) {
-                closeOriginalTour();
-            }
-        });
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && originalTourModal && originalTourModal.classList.contains('is-open')) {
-            closeOriginalTour();
-        }
-    });
 
     window.addEventListener('devicemotion', function (e) {
         var iframe = document.getElementById(pano_iframe_name);
