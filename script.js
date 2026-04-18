@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutVideoModal = document.getElementById('aboutVideoModal');
     const aboutVideoFrame = document.getElementById('aboutVideoFrame');
     const aboutVideoClose = document.getElementById('aboutVideoClose');
-    const aboutVideoEmbedUrl = 'https://www.youtube.com/embed/WjaVm0h-Afg?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    const aboutVideoEmbedUrl = 'https://www.youtube.com/embed/eEvBAFc9vDE?autoplay=1&rel=0&modestbranding=1&playsinline=1';
 
     const openAboutVideo = () => {
         if (!aboutVideoModal || !aboutVideoFrame) return;

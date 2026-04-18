@@ -36,15 +36,25 @@
             --font-body: 'Montserrat', sans-serif;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--bg-black); color: var(--text-white); font-family: var(--font-body); }
+        body {
+            background:
+                radial-gradient(1200px 600px at 10% -10%, rgba(230,0,0,0.08), transparent 55%),
+                radial-gradient(900px 500px at 90% 0%, rgba(255,255,255,0.04), transparent 60%),
+                var(--bg-black);
+            color: var(--text-white);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
 
         /* ─── Nav (minimal, consistent with main) ─── */
         .about-nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(5,5,5,0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            padding: 18px 40px;
+            background: rgba(5,5,5,0.9);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+            padding: 16px 40px;
             display: flex; align-items: center; justify-content: space-between;
         }
         .about-nav .logo-wrap { display: flex; align-items: center; gap: 12px; text-decoration: none; }
@@ -56,15 +66,15 @@
             display: inline-flex; align-items: center; gap: 8px;
             color: var(--text-gray); text-decoration: none; font-size: 0.85rem;
             font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
         }
-        .about-nav .back-btn:hover { color: #fff; }
+        .about-nav .back-btn:hover { color: #fff; transform: translateX(-2px); }
 
         /* ─── Hero ─── */
         .about-hero {
-            min-height: 60vh;
-            display: flex; align-items: flex-end;
-            padding: 140px 40px 80px;
+            min-height: 66vh;
+            display: flex; align-items: center;
+            padding: 132px 40px 82px;
             position: relative; overflow: hidden;
             background: #000;
         }
@@ -78,7 +88,14 @@
             background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px);
             background-size: 30px 30px;
         }
-        .about-hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width:100%; }
+        .about-hero-content {
+            position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width:100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: clamp(24px, 4vw, 40px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+        }
         .about-hero-eyebrow {
             display: inline-block;
             border: 1px solid var(--primary-red); color: var(--primary-red);
@@ -88,22 +105,22 @@
         .about-hero-title {
             font-family: var(--font-display);
             font-size: clamp(3rem, 7vw, 6rem);
-            line-height: 1; text-transform: uppercase; letter-spacing: -1px;
-            margin-bottom: 20px;
+            line-height: 0.95; text-transform: uppercase; letter-spacing: -1px;
+            margin-bottom: 18px;
         }
         .about-hero-title .red { color: var(--primary-red); }
         .about-hero-subtitle {
-            color: var(--text-gray); font-size: 1.1rem; max-width: 550px; line-height: 1.7;
+            color: rgba(255,255,255,0.78); font-size: 1.05rem; max-width: 620px; line-height: 1.72;
         }
 
         /* ─── Sections ─── */
-        .about-section { padding: 100px 40px; }
+        .about-section { padding: clamp(72px, 8vw, 108px) 40px; }
         .about-section .inner { max-width: 1200px; margin: 0 auto; }
 
         /* ─── Section label ─── */
         .section-label {
             display: inline-flex; align-items: center; gap: 10px;
-            color: var(--primary-red); font-size: 0.75rem; font-weight: 800;
+            color: #ff5d5d; font-size: 0.75rem; font-weight: 800;
             letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;
         }
         .section-label::before {
@@ -121,11 +138,125 @@
             font-family: var(--font-display);
             font-size: clamp(2rem, 3.5vw, 3rem);
             line-height: 1.15; text-transform: uppercase;
-            border-left: 4px solid var(--primary-red); padding-left: 24px;
+            border-left: 4px solid var(--primary-red); padding: 18px 0 18px 24px;
+            background: linear-gradient(to right, rgba(230,0,0,0.08), transparent 62%);
+            border-radius: 8px;
         }
-        .mission-body { color: var(--text-gray); font-size: 1.05rem; line-height: 1.8; }
+        .mission-body {
+            color: var(--text-gray); font-size: 1.03rem; line-height: 1.8;
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 14px 36px rgba(0,0,0,0.38);
+        }
         .mission-body p + p { margin-top: 16px; }
         .mission-body strong { color: #fff; }
+
+        /* ─── Founder Vision ─── */
+        .founder-section {
+            background: #000;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 46px;
+            align-items: start;
+        }
+        @media(max-width:980px){ .founder-grid { grid-template-columns: 1fr; } }
+
+        .founder-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3.4vw, 2.85rem);
+            line-height: 1.06;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+        .founder-line {
+            display: block;
+            white-space: nowrap;
+        }
+        .founder-title .red { color: var(--primary-red); }
+        .founder-body {
+            color: var(--text-gray);
+            font-size: 1.01rem;
+            line-height: 1.78;
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 14px 36px rgba(0,0,0,0.36);
+        }
+        .founder-body p + p { margin-top: 14px; }
+        .founder-body strong { color: #fff; }
+
+        .founder-video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            align-items: start;
+        }
+        @media(max-width:640px){ .founder-video-grid { grid-template-columns: 1fr; } }
+        .founder-video-grid .founder-video-card:nth-child(2) {
+            margin-top: 34px;
+        }
+        @media(max-width:640px){
+            .founder-video-grid .founder-video-card:nth-child(2) {
+                margin-top: 0;
+            }
+        }
+        .founder-video-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 16px 38px rgba(0,0,0,0.34);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+        .founder-video-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(230,0,0,0.4);
+        }
+        .founder-video-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.02);
+        }
+        .founder-video-head span {
+            font-size: 0.74rem;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #fff;
+        }
+        .founder-video-head a {
+            color: var(--primary-red);
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        .founder-video-frame {
+            position: relative;
+            width: 100%;
+            padding-top: 177.78%;
+            background: #000;
+        }
+        .founder-video-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
         /* ─── Values ─── */
         .values-section { background: #000; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -136,16 +267,17 @@
 
         .value-card {
             background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
             border-radius: 20px; padding: 40px;
             position: relative; overflow: hidden;
             transition: all 0.4s ease;
+            box-shadow: 0 14px 34px rgba(0,0,0,0.3);
         }
         .value-card::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
             background: var(--primary-red); opacity: 0; transition: opacity 0.4s;
         }
-        .value-card:hover { border-color: rgba(230,0,0,0.25); transform: translateY(-6px); }
+        .value-card:hover { border-color: rgba(230,0,0,0.35); transform: translateY(-8px); box-shadow: 0 22px 42px rgba(0,0,0,0.45); }
         .value-card:hover::before { opacity: 1; }
 
         .value-icon {
@@ -163,68 +295,251 @@
         }
         .value-desc { color: var(--text-gray); font-size: 0.95rem; line-height: 1.7; }
 
+        /* ─── Who We Serve ─── */
+        .audience-section {
+            background: #050505;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .audience-head {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 26px;
+            align-items: end;
+            margin-bottom: 34px;
+        }
+        @media(max-width:900px){ .audience-head { grid-template-columns: 1fr; } }
+        .audience-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            text-transform: uppercase;
+            letter-spacing: -0.8px;
+            line-height: 1.06;
+        }
+        .audience-sub {
+            color: #a9a9a9;
+            max-width: 520px;
+            line-height: 1.72;
+            font-size: 0.98rem;
+        }
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+        @media(max-width:1100px){ .audience-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(max-width:640px){ .audience-grid { grid-template-columns: 1fr; } }
+        .audience-card {
+            background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 16px;
+            padding: 22px 20px;
+            box-shadow: 0 14px 30px rgba(0,0,0,0.32);
+            transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
+        }
+        .audience-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(230,0,0,0.42);
+            box-shadow: 0 22px 42px rgba(0,0,0,0.42);
+        }
+        .audience-icon {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: rgba(230,0,0,0.16);
+            border: 1px solid rgba(230,0,0,0.28);
+            color: var(--primary-red);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 14px;
+            font-size: 1rem;
+        }
+        .audience-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.24rem;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            line-height: 1.05;
+        }
+        .audience-card p {
+            color: #a7a7a7;
+            font-size: 0.92rem;
+            line-height: 1.66;
+        }
+
         /* ─── Timeline ─── */
         .timeline-section { background: var(--bg-black); }
         .timeline-title {
             font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-size: clamp(2.2rem, 4.2vw, 3.9rem);
             text-transform: uppercase; letter-spacing: -1px;
-            margin-bottom: 70px;
+            margin-bottom: 28px;
+            line-height: 1.02;
         }
-        .timeline { position: relative; }
+        .journey-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 52px;
+        }
+        @media(max-width:900px){ .journey-metrics { grid-template-columns: 1fr; } }
+        .journey-metric {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 16px 18px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+        }
+        .journey-metric .num {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--primary-red);
+            line-height: 1;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        .journey-metric .lbl {
+            font-size: 0.76rem;
+            color: rgba(255,255,255,0.82);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+        }
+        .timeline {
+            position: relative;
+            max-width: 980px;
+            margin: 0 auto;
+        }
         .timeline::before {
             content: ''; position: absolute;
-            left: 50%; transform: translateX(-50%);
-            top: 0; bottom: 0; width: 2px;
-            background: linear-gradient(to bottom, var(--primary-red), rgba(230,0,0,0.05));
+            left: 25px; transform: none;
+            top: 0; bottom: 0; width: 3px;
+            background: linear-gradient(to bottom, #ff2a2a, rgba(230,0,0,0.12));
+            box-shadow: 0 0 28px rgba(230,0,0,0.28);
         }
         @media(max-width:768px){ .timeline::before { left: 20px; } }
 
+        .timeline-year-row {
+            position: relative;
+            height: 28px;
+            margin: 0 0 18px;
+            position: relative;
+            z-index: 2;
+        }
+        .year-chip {
+            position: absolute;
+            left: 25px;
+            top: 0;
+            transform: translateX(calc(-100% - 14px));
+            font-family: var(--font-display);
+            font-size: 0.84rem;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: #fff;
+            background: rgba(230,0,0,0.24);
+            border: 1px solid rgba(230,0,0,0.46);
+            border-radius: 999px;
+            padding: 5px 11px 4px;
+        }
+
         .timeline-item {
-            display: grid; grid-template-columns: 1fr 60px 1fr;
-            gap: 0; align-items: center; margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 0;
+            align-items: start;
+            margin-bottom: 34px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 44px;
+            top: 22px;
+            width: 22px;
+            height: 2px;
+            background: linear-gradient(to right, rgba(255, 58, 58, 0.95), rgba(255, 58, 58, 0.25));
+        }
+        .timeline-right {
+            grid-column: 2;
+            padding-left: 24px;
+            text-align: left;
         }
         @media(max-width:768px){
-            .timeline-item { grid-template-columns: 60px 1fr; }
-            .timeline-left { display: none; }
+            .timeline-year-row { height: 26px; margin-bottom: 14px; }
+            .year-chip {
+                left: 20px;
+                transform: translateX(calc(-100% - 10px));
+                font-size: 0.72rem;
+                letter-spacing: 1.2px;
+            }
+            .timeline-item { grid-template-columns: 48px 1fr; margin-bottom: 24px; }
+            .timeline-item::before { left: 33px; width: 18px; }
+            .timeline-right { padding-left: 18px; }
         }
 
-        .timeline-left { text-align: right; padding-right: 40px; }
-        .timeline-right { padding-left: 40px; }
-        .timeline-item.alt .timeline-left { order: 3; text-align: left; padding-left: 40px; padding-right: 0; }
-        .timeline-item.alt .timeline-center { order: 2; }
-        .timeline-item.alt .timeline-right { order: 1; text-align: right; padding-right: 40px; padding-left: 0; }
-        @media(max-width:768px){
-            .timeline-item.alt .timeline-left { display: none; }
-            .timeline-item.alt .timeline-right { order: 2; text-align: left; padding-left: 40px; padding-right: 0; }
-            .timeline-item.alt .timeline-center { order: 1; }
+        .timeline-center {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+            min-height: 56px;
         }
-
-        .timeline-center { display: flex; flex-direction: column; align-items: center; position: relative; }
         .timeline-dot {
-            width: 52px; height: 52px; border-radius: 50%;
-            background: var(--bg-card); border: 3px solid var(--primary-red);
+            width: 44px; height: 44px; border-radius: 50%;
+            background: linear-gradient(145deg, #ff2b2b, #cc0000);
+            border: 2px solid rgba(255, 255, 255, 0.78);
             display: flex; align-items: center; justify-content: center;
-            color: var(--primary-red); font-size: 1.1rem;
-            box-shadow: 0 0 20px rgba(230,0,0,0.3); z-index: 2;
+            color: #fff; font-size: 0.95rem;
+            box-shadow:
+                0 0 0 5px rgba(230, 0, 0, 0.15),
+                0 0 20px rgba(230,0,0,0.42),
+                0 10px 24px rgba(0,0,0,0.34);
+            z-index: 2;
             flex-shrink: 0;
-        }
-        .timeline-year {
-            font-family: var(--font-display); font-size: 0.85rem;
-            color: var(--primary-red); letter-spacing: 2px; text-transform: uppercase;
-            margin-top: 8px; white-space: nowrap;
         }
 
         .timeline-card {
-            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.04);
-            border-radius: 16px; padding: 30px;
-            transition: all 0.4s; position:relative; overflow:hidden;
+            background:
+                radial-gradient(120% 180% at 0% 0%, rgba(255,255,255,0.08), transparent 42%),
+                linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 18px; padding: 30px 30px 28px;
+            transition: all 0.38s ease; position:relative; overflow:hidden;
+            box-shadow: 0 16px 42px rgba(0,0,0,0.36);
         }
         .timeline-card::after {
             content:''; position:absolute; top:0; left:0; right:0; height:2px;
             background: var(--primary-red); opacity:0.4;
         }
-        .timeline-card:hover { border-color: rgba(230,0,0,0.3); transform: scale(1.02); }
+        .timeline-card .tc-tag {
+            position: relative;
+        }
+        .timeline-card .tc-tag::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-red);
+            box-shadow: 0 0 8px rgba(230,0,0,0.7);
+        }
+        .timeline-card::before {
+            content:'';
+            position:absolute;
+            inset:-60% -80%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events:none;
+        }
+        .timeline-card:hover {
+            border-color: rgba(230,0,0,0.42);
+            transform: translateY(-6px) scale(1.015);
+            box-shadow: 0 26px 52px rgba(0,0,0,0.5);
+        }
+        .timeline-card:hover::before { opacity: 1; }
         .timeline-card .tc-tag {
             display: inline-block; background: rgba(230,0,0,0.1); border: 1px solid rgba(230,0,0,0.2);
             color: var(--primary-red); font-size: 0.7rem; font-weight: 800;
@@ -235,10 +550,67 @@
             font-family: var(--font-display); font-size: 1.6rem;
             text-transform: uppercase; line-height: 1.1; margin-bottom: 10px;
         }
-        .timeline-card p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.65; }
+        .timeline-card p { color: #a8a8a8; font-size: 0.98rem; line-height: 1.7; }
         .timeline-card .stat {
-            font-family: var(--font-display); font-size: 2.5rem;
+            font-family: var(--font-display); font-size: 2.6rem;
             color: var(--primary-red); line-height: 1; margin: 12px 0 4px;
+            text-shadow: 0 0 18px rgba(230,0,0,0.22);
+        }
+
+        /* ─── FAQ ─── */
+        .faq-section {
+            background: #000;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .faq-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            text-transform: uppercase;
+            letter-spacing: -0.8px;
+            margin-bottom: 24px;
+        }
+        .faq-list {
+            display: grid;
+            gap: 12px;
+        }
+        .faq-item {
+            background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.012));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            font-size: 0.92rem;
+            text-transform: uppercase;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: '+';
+            color: var(--primary-red);
+            font-size: 1.15rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+        .faq-answer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 14px 18px 18px;
+            color: #a7a7a7;
+            font-size: 0.96rem;
+            line-height: 1.7;
         }
 
         /* ─── CTA Banner ─── */
@@ -248,7 +620,12 @@
             border-top: 1px solid rgba(255,255,255,0.05);
         }
         .about-cta-inner {
-            max-width: 800px; margin: 0 auto; text-align: center;
+            max-width: 860px; margin: 0 auto; text-align: center;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: clamp(28px, 4vw, 44px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
         }
         .about-cta-title {
             font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem);
@@ -269,7 +646,7 @@
             text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
             transition: all 0.3s;
         }
-        .btn-wa:hover { background: #1ebe5c; box-shadow: 0 10px 20px rgba(37,211,102,0.3); transform: translateY(-2px); }
+        .btn-wa:hover { background: #1ebe5c; box-shadow: 0 12px 24px rgba(37,211,102,0.36); transform: translateY(-2px); }
 
         .btn-tour {
             display: inline-flex; align-items: center; gap: 10px;
@@ -279,13 +656,13 @@
             text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
             transition: all 0.3s;
         }
-        .btn-tour:hover { background: #cc0000; box-shadow: 0 10px 20px rgba(230,0,0,0.3); transform: translateY(-2px); }
+        .btn-tour:hover { background: #cc0000; box-shadow: 0 12px 24px rgba(230,0,0,0.36); transform: translateY(-2px); }
 
         /* ─── Footer strip ─── */
         .about-footer {
             background: #000; border-top: 1px solid rgba(255,255,255,0.05);
             padding: 24px 40px; text-align: center;
-            color: var(--text-gray); font-size: 0.8rem;
+            color: rgba(255,255,255,0.52); font-size: 0.8rem;
         }
         .about-footer a { color: var(--primary-red); text-decoration: none; }
     </style>
@@ -452,6 +829,54 @@
         </div>
     </section>
 
+    <!-- Founder Vision -->
+    <section class="about-section founder-section">
+        <div class="inner">
+            <div class="founder-grid">
+                <div>
+                    <div class="section-label">Founder's Vision</div>
+                    <h2 class="founder-title">
+                        <span class="founder-line">WHY WE BROUGHT <span class="red">LUXURY FITNESS</span></span>
+                        <span class="founder-line">TO CHALAKUDY</span>
+                    </h2>
+                    <div class="founder-body">
+                        <p>Founders <strong>Krishna Kumar</strong> and <strong>Zakheer Abdul Rahiman</strong> started Zak's Gym Master with one conviction: <strong>people in Chalakudy should not have to travel to bigger cities to experience a world-class gym.</strong> The goal was simple but bold — bring premium infrastructure, serious coaching, and high-quality service to the local community.</p>
+                        <p>They saw families, working professionals, and first-time gym-goers struggling to find a place that felt both aspirational and approachable. So they built a gym where luxury is not intimidation — it is comfort, cleanliness, safety, and standards that help ordinary people stay consistent.</p>
+                        <p><strong>Founder promise:</strong> make fitness accessible, raise the bar of quality, and help people build healthier, stronger, better lives right here in Chalakudy.</p>
+                    </div>
+                </div>
+
+                <div class="founder-video-grid">
+                    <article class="founder-video-card">
+                        <div class="founder-video-head">
+                            <span>Krishna Kumar</span>
+                            <a href="https://www.youtube.com/shorts/ob_hYjABCzE" target="_blank">Open</a>
+                        </div>
+                        <div class="founder-video-frame">
+                            <iframe src="https://www.youtube.com/embed/ob_hYjABCzE?rel=0&modestbranding=1&playsinline=1"
+                                title="Zak's Gym Master Founder Vision Video 1"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="founder-video-card">
+                        <div class="founder-video-head">
+                            <span>Zakheer Abdul Rahiman</span>
+                            <a href="https://www.youtube.com/shorts/WjaVm0h-Afg" target="_blank">Open</a>
+                        </div>
+                        <div class="founder-video-frame">
+                            <iframe src="https://www.youtube.com/embed/WjaVm0h-Afg?rel=0&modestbranding=1&playsinline=1"
+                                title="Zak's Gym Master Founder Vision Video 2"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Values -->
     <section class="about-section values-section">
         <div class="inner">
@@ -494,21 +919,68 @@
         </div>
     </section>
 
+    <!-- Who We Serve -->
+    <section class="about-section audience-section">
+        <div class="inner">
+            <div class="section-label">Who We Serve</div>
+            <div class="audience-head">
+                <h2 class="audience-title">Built For Real People,<br><span style="color:var(--primary-red);">Not Just Athletes.</span></h2>
+                <p class="audience-sub">From busy families to first-time members, every program is designed to fit daily life in Chalakudy with structure, support, and visible results.</p>
+            </div>
+            <div class="audience-grid">
+                <article class="audience-card">
+                    <div class="audience-icon"><i class="fas fa-home"></i></div>
+                    <h3>Families</h3>
+                    <p>Safe, welcoming training with coaching support that helps parents and family members stay healthy together.</p>
+                </article>
+                <article class="audience-card">
+                    <div class="audience-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Working Professionals</h3>
+                    <p>Time-efficient plans focused on fat loss, posture, and sustained energy to perform better at work and home.</p>
+                </article>
+                <article class="audience-card">
+                    <div class="audience-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Beginners</h3>
+                    <p>Step-by-step guidance, form correction, and realistic milestones so you build confidence without pressure.</p>
+                </article>
+                <article class="audience-card">
+                    <div class="audience-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Lifestyle Transformations</h3>
+                    <p>Programs built for long-term change: stronger body, better habits, and measurable progress that lasts.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Timeline -->
     <section class="about-section timeline-section">
         <div class="inner">
             <div class="section-label">Our Journey</div>
             <h2 class="timeline-title">From One Studio<br><span style="color:var(--primary-red);">To A Movement.</span></h2>
+            <div class="journey-metrics">
+                <div class="journey-metric">
+                    <div class="num">4,000 → 10,000</div>
+                    <div class="lbl">Square Feet Expansion</div>
+                </div>
+                <div class="journey-metric">
+                    <div class="num">1,000+</div>
+                    <div class="lbl">Active Members</div>
+                </div>
+                <div class="journey-metric">
+                    <div class="num">2 Locations</div>
+                    <div class="lbl">One Community</div>
+                </div>
+            </div>
             <div class="timeline">
+
+                <div class="timeline-year-row">
+                    <div class="year-chip">2024</div>
+                </div>
 
                 <!-- 1: Founded -->
                 <div class="timeline-item">
-                    <div class="timeline-left">
-                        <!-- empty on right-side items -->
-                    </div>
                     <div class="timeline-center">
                         <div class="timeline-dot"><i class="fas fa-flag"></i></div>
-                        <div class="timeline-year">2024</div>
                     </div>
                     <div class="timeline-right">
                         <div class="timeline-card">
@@ -521,8 +993,11 @@
                 </div>
 
                 <!-- 2: 500 members -->
-                <div class="timeline-item alt">
-                    <div class="timeline-left">
+                <div class="timeline-item">
+                    <div class="timeline-center">
+                        <div class="timeline-dot"><i class="fas fa-users"></i></div>
+                    </div>
+                    <div class="timeline-right">
                         <div class="timeline-card">
                             <span class="tc-tag">Milestone</span>
                             <h3>500 Active Members</h3>
@@ -530,19 +1005,12 @@
                             <p>Within months of opening, we crossed 500 active members. Word spread organically — not from ads, but from members whose lives were genuinely changing.</p>
                         </div>
                     </div>
-                    <div class="timeline-center">
-                        <div class="timeline-dot"><i class="fas fa-users"></i></div>
-                        <div class="timeline-year">2024</div>
-                    </div>
-                    <div class="timeline-right"></div>
                 </div>
 
                 <!-- 3: 1000 members -->
                 <div class="timeline-item">
-                    <div class="timeline-left"></div>
                     <div class="timeline-center">
                         <div class="timeline-dot"><i class="fas fa-trophy"></i></div>
-                        <div class="timeline-year">2024</div>
                     </div>
                     <div class="timeline-right">
                         <div class="timeline-card">
@@ -554,9 +1022,16 @@
                     </div>
                 </div>
 
+                <div class="timeline-year-row">
+                    <div class="year-chip">2026</div>
+                </div>
+
                 <!-- 4: Premium launch -->
-                <div class="timeline-item alt">
-                    <div class="timeline-left">
+                <div class="timeline-item">
+                    <div class="timeline-center">
+                        <div class="timeline-dot"><i class="fas fa-crown"></i></div>
+                    </div>
+                    <div class="timeline-right">
                         <div class="timeline-card">
                             <span class="tc-tag">Flagship Launch</span>
                             <h3>Zak's Gym Master Premium</h3>
@@ -564,13 +1039,34 @@
                             <p>We launched our Premium flagship — a 10,000 sq ft facility at Tramway Road, 2nd Floor, Chalakudy. The biggest gym in Chalakudy, designed as the ultimate fitness destination for the city and beyond.</p>
                         </div>
                     </div>
-                    <div class="timeline-center">
-                        <div class="timeline-dot"><i class="fas fa-crown"></i></div>
-                        <div class="timeline-year">2026</div>
-                    </div>
-                    <div class="timeline-right"></div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="about-section faq-section">
+        <div class="inner">
+            <div class="section-label">FAQ</div>
+            <h2 class="faq-title">Before You Visit,<br><span style="color:var(--primary-red);">Know This.</span></h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Can beginners join Zak's Gym Master?</summary>
+                    <div class="faq-answer">Absolutely. Most members start as beginners. Our coaches assess your current level and create a structured plan so you progress safely and confidently.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Is this gym suitable for families and women?</summary>
+                    <div class="faq-answer">Yes. The environment is designed to be family-friendly, respectful, and coach-led, with clear support for women, professionals, and first-time trainees.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Do I need personal training to see results?</summary>
+                    <div class="faq-answer">Personal training accelerates results, but it is not mandatory. We offer guided options across budgets and goals so you can choose what fits your lifestyle.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>How soon can I start?</summary>
+                    <div class="faq-answer">You can start immediately. Book a visit, meet the coaching team, and we will help you choose the right plan for your goals and schedule.</div>
+                </details>
             </div>
         </div>
     </section>

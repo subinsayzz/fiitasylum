@@ -40,7 +40,7 @@
 
             <nav class="nav-links" id="navLinks">
                 <a href="#home" class="active">HOME</a>
-                <a href="#about">ABOUT US</a>
+                <a href="about.html">ABOUT US</a>
                 <a href="#locations">LOCATIONS</a>
                 <a href="#training">PROGRAMS <i class="fas fa-angle-down"
                         style="font-size:0.75rem; margin-left:3px;"></i></a>
@@ -141,7 +141,7 @@
             <div class="about-content animate-on-scroll" style="transition-delay: 0.2s;">
                 <div
                     style="display: inline-block; background: transparent; border: 1px solid var(--primary-red); color: var(--primary-red); font-family: var(--font-body); font-weight: 700; font-size: 0.8rem; padding: 6px 16px; border-radius: 50px; letter-spacing: 1px; margin-bottom: 25px;">
-                    ABOUT COMPANY
+                    ABOUT ZAK'S GYM
                 </div>
 
                 <h2
@@ -2135,18 +2135,21 @@
                 z-index: 1;
                 border-top: 1px solid rgba(255, 255, 255, 0.05);
                 padding-top: 35px;
-                display: flex;
-                justify-content: space-between;
+                display: grid;
+                grid-template-columns: 1fr auto;
                 align-items: center;
-                flex-wrap: wrap;
-                gap: 20px;
+                gap: 24px;
             }
 
-            @media (max-width: 768px) {
-                .footer-bottom {
-                    flex-direction: column;
-                    text-align: center;
-                }
+            .footer-bottom .copyright-text {
+                text-align: left;
+                margin: 0;
+            }
+
+            .footer-bottom .volt-signature {
+                text-align: right;
+                justify-self: end;
+                white-space: nowrap;
             }
 
             .social-link-fittex {
@@ -2191,9 +2194,10 @@
                         training environment since our inception.
                     </p>
                     <div style="display: flex; gap: 15px;">
-                        <a href="#" class="social-link-fittex"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link-fittex"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link-fittex"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61571947777248" target="_blank" class="social-link-fittex"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/fitness.gymmaster/" target="_blank" class="social-link-fittex"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@GymMasterChalakudy/shorts" target="_blank" class="social-link-fittex"><i class="fab fa-youtube"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=917509577577&text=Hi%21+I%27d+like+to+visit+Zak%27s+Gym.+Can+I+get+directions+and+timing%3F&type=phone_number&app_absent=0" target="_blank" class="social-link-fittex"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -2253,13 +2257,7 @@
                     &copy; <span id="year">2026</span> ZAK'S GYM MASTER. ALL RIGHTS RESERVED.
                 </div>
 
-                <div class="volt-signature">⚡ A VØLT Network Gym</div>
-
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61571947777248" target="_blank" class="social-link-fittex"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/fitness.gymmaster/" target="_blank" class="social-link-fittex"><i class="fab fa-instagram"></i></a>
-                    <a href="https://api.whatsapp.com/send/?phone=917509577577&text=Hi%21+I%27d+like+to+visit+Zak%27s+Gym.+Can+I+get+directions+and+timing%3F&type=phone_number&app_absent=0" target="_blank" class="social-link-fittex"><i class="fab fa-whatsapp"></i></a>
-                </div>
+                <div class="volt-signature">⚡ A VØLT NETWORK GYM</div>
             </div>
         </div>
     </footer>
@@ -2312,7 +2310,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="script.js?v=19"></script>
+    <script src="script.js?v=24"></script>
 
     <!-- Form Submit Handler + WhatsApp Redirect -->
     <script>
