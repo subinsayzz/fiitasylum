@@ -3,208 +3,334 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>White Tigers | Premium Fitness Club</title>
-  <meta name="description" content="White Tigers is a premium two-floor gym in North Paravur with expert trainers, performance equipment, and personalized transformation plans.">
+  <title>FIIT ASYLUM | Home of PT Vishnu</title>
+  <meta name="description" content="FIIT ASYLUM is a PT-focused premium gym founded by PT Vishnu and Adv. Ammu, featuring international equipment, certified nutrition guidance, and transformation-led coaching.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header" id="header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="White Tigers home">
-        <img src="assets/white-tigers-logo.png" alt="White Tigers logo">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="FIIT ASYLUM home">
+        <img src="assets/fiit-asylum-logo.png" alt="FIIT ASYLUM logo">
       </a>
 
       <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-label="Toggle menu">Menu</button>
 
       <nav class="nav" id="navLinks" aria-label="Primary">
         <a href="#home">Home</a>
-        <a href="#facilities">Facilities</a>
-        <a href="#trainers">Trainers</a>
+        <a href="#experience">Experience</a>
+        <a href="#programs">Programs</a>
         <a href="#reviews">Reviews</a>
+        <a href="#founders">Founders</a>
         <a href="#location">Location</a>
-        <a href="#contact">Contact</a>
       </nav>
 
-      <a href="#contact" class="cta-top">Book Free Trial</a>
+      <div class="nav-actions">
+        <a href="#contact" class="cta-top">Book Consultation</a>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-video" aria-hidden="true">
-        <iframe
-          src="https://www.youtube.com/embed/cVe5a2JWhVY?autoplay=1&mute=1&controls=0&loop=1&playlist=cVe5a2JWhVY&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1"
-          title="White Tigers training video"
-          loading="lazy"
-          allow="autoplay; encrypted-media; picture-in-picture"
-        ></iframe>
+      <div class="hero-bg" aria-hidden="true">
+        <img src="assets/fiit-gym-1.jpg" alt="FIIT ASYLUM premium training floor">
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="container hero-shell">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">White Tigers Premium Fitness Club</p>
-          <h1>Train Hard. Transform Right.</h1>
-          <p>
-            Welcome to WHITE TIGERS, where your body meets the lifestyle it truly deserves. Train in a hygienic,
-            high-energy atmosphere across 2 floors and 7,500 sq.ft. of premium fitness space.
+        <div class="hero-content reveal">
+          <p class="hero-kicker">PT Focus Gym | Home Of PT Vishnu</p>
+          <h1>Train With Precision <span>At FIIT ASYLUM</span></h1>
+          <p class="hero-lead">
+            Premium coaching. International equipment. Measurable transformation. Built for people who want elite guidance without compromise.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-solid" href="#contact" data-magnetic>Book Free Trial</a>
-            <a class="btn btn-outline" href="#facilities" data-magnetic>Explore Facilities</a>
+            <a class="btn btn-solid" href="#contact" data-magnetic>Start Consultation</a>
+            <a class="btn btn-outline" href="#experience" data-magnetic>Tour Facilities</a>
           </div>
-
-          <div class="hero-stat-row">
-            <article>
-              <h3>7,500</h3>
-              <p>Sq.ft. Fitness Space</p>
-            </article>
-            <article>
-              <h3>2</h3>
-              <p>Dedicated Floors</p>
-            </article>
-            <article>
-              <h3>6 Days</h3>
-              <p>Training Week</p>
-            </article>
-          </div>
+        </div>
+        <div class="hero-metrics reveal">
+          <article>
+            <h3>PT</h3>
+            <p>Personal Training, Group Sessions, and High Intensity Programs</p>
+          </article>
+          <article>
+            <h3>360</h3>
+            <p>Specialized programs for PCOD, PCOS, Thyroid, Rehab, and Bodybuilding</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section gallery-section" id="facilities">
+    <section class="section" id="experience">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">World-Class Facilities</p>
-          <h2>Train In Every Zone</h2>
+          <p class="eyebrow">Elevated Environment</p>
+          <h2>International Standard Training Atmosphere</h2>
+          <p>
+            Every zone is built for intent: strength progression, movement quality, guided conditioning, and focused recovery in a premium, clean, high-energy setting.
+          </p>
         </div>
 
-        <div class="preview-layout">
-          <div class="hero-showcase reveal lift-card" data-rotate>
-            <img src="assets/gallery-1.jpg" alt="White Tigers gym showcase" class="active">
-            <img src="assets/gallery-3.jpg" alt="White Tigers strength floor">
-            <img src="assets/gallery-6.jpg" alt="White Tigers training area">
-            <div class="hero-showcase-label">7500 SQ.FT | 2 FLOORS | HIGH PERFORMANCE</div>
-          </div>
-
-          <div class="preview-side">
-            <article class="facility-card reveal lift-card" style="--card-img:url('assets/gallery-2.jpg')">
-              <div>
-                <h3>Strength Zone</h3>
-                <p>Free weights and machine systems for powerful progression.</p>
-              </div>
-            </article>
-            <article class="facility-card reveal lift-card" style="--card-img:url('assets/gallery-4.jpg')">
-              <div>
-                <h3>Cardio Zone</h3>
-                <p>Endurance-focused area for fat loss and conditioning.</p>
-              </div>
-            </article>
-            <article class="facility-card reveal lift-card" style="--card-img:url('assets/gallery-5.jpg')">
-              <div>
-                <h3>Functional Zone</h3>
-                <p>Mobility, core, and athletic movement training space.</p>
-              </div>
-            </article>
-          </div>
+        <div class="showcase-grid">
+          <article class="showcase-card reveal lift-card large" style="--card-img:url('assets/fiit-gym-1.jpg')">
+            <div>
+              <h3>Performance Floor</h3>
+              <p>Power racks, free-weight systems, and an open floor built for strong programming.</p>
+            </div>
+          </article>
+          <article class="showcase-card reveal lift-card" style="--card-img:url('assets/fiit-gym-2.jpg')">
+            <div>
+              <h3>Precision Equipment</h3>
+              <p>Hammer Strength and Life Fitness equipment aligned to safe progression.</p>
+            </div>
+          </article>
+          <article class="showcase-card reveal lift-card" style="--card-img:url('assets/fiit-gym-3.jpg')">
+            <div>
+              <h3>Fuel Corner</h3>
+              <p>Cafeteria support for performance-friendly routines and better consistency.</p>
+            </div>
+          </article>
+          <article class="showcase-card reveal lift-card" style="--card-img:url('assets/fiit-gym-5.jpg')">
+            <div>
+              <h3>Discipline Culture</h3>
+              <p>Structured floor discipline and coaching clarity to keep progress measurable.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="trainers">
+    <section class="section dark" id="programs">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Expert Guidance</p>
-          <h2>Trainer-Led Coaching</h2>
+          <p class="eyebrow">Programs</p>
+          <h2>Built For Real-World Goals</h2>
         </div>
 
-        <div class="trainers-grid">
-          <article class="trainer-card reveal lift-card">
-            <img src="assets/gallery-6.jpg" alt="Strength training coach zone">
-            <div>
-              <h3>Strength Coaching</h3>
-              <p>Form-first progressive plans to build muscle safely and consistently.</p>
-            </div>
+        <div class="program-grid">
+          <article class="program-card reveal lift-card">
+            <h3>Personal Training</h3>
+            <p>One-on-one goal mapping, form correction, progression tracking, and accountability.</p>
           </article>
-          <article class="trainer-card reveal lift-card">
-            <img src="assets/gallery-3.jpg" alt="Fat loss and cardio coach zone">
-            <div>
-              <h3>Fat Loss Coaching</h3>
-              <p>Cardio plus resistance structures with real nutrition accountability.</p>
-            </div>
+          <article class="program-card reveal lift-card">
+            <h3>Group Sessions</h3>
+            <p>High-energy coached sessions that keep intensity high and adherence stronger.</p>
           </article>
-          <article class="trainer-card reveal lift-card">
-            <img src="assets/gallery-4.jpg" alt="Functional and rehab coach zone">
-            <div>
-              <h3>Functional & Rehab</h3>
-              <p>Movement correction support for injury rehab and long-term performance.</p>
-            </div>
+          <article class="program-card reveal lift-card">
+            <h3>Nutrition Guidance</h3>
+            <p>Internationally certified nutrition support integrated with your training cycle.</p>
+          </article>
+          <article class="program-card reveal lift-card">
+            <h3>Special Focus Programs</h3>
+            <p>PCOD, PCOS, thyroid support, fat loss, weight loss, and sustainable body recomposition.</p>
+          </article>
+          <article class="program-card reveal lift-card">
+            <h3>Bodybuilding</h3>
+            <p>Structured hypertrophy and strength blocks for competitive and lifestyle athletes.</p>
+          </article>
+          <article class="program-card reveal lift-card">
+            <h3>Injury & Rehab</h3>
+            <p>Progressive return-to-performance plans with mobility, corrective, and strength work.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section dark reviews" id="reviews">
-      <div class="container reviews-wrap">
-        <div class="section-head reveal">
+    <section class="section reviews-live" id="reviews">
+      <div class="container">
+        <div class="section-head reveal reviews-head">
           <p class="eyebrow">Google Reviews</p>
-          <h2>What Our Members Say</h2>
+          <h2>Trusted By Real Members</h2>
+          <p>Real 5-star feedback from FIIT ASYLUM members.</p>
         </div>
 
-        <aside class="rating-box reveal lift-card">
-          <h3>4.8</h3>
-          <p>Google Rating</p>
-          <span>★★★★★</span>
-        </aside>
+        <div class="google-reviews-widget reveal">
+          <div class="google-review-summary">
+            <h3>5.0 ★ Member Feedback</h3>
+            <p>Directly showcased from Google Reviews</p>
+          </div>
 
-        <div class="review-grid">
-          <article class="review-card reveal lift-card">
-            <p class="stars">★★★★★</p>
-            <p>Very clean and spacious gym with excellent machines. Trainers are supportive and motivating every day.</p>
-            <h4>Google Member</h4>
-          </article>
-          <article class="review-card reveal lift-card">
-            <p class="stars">★★★★★</p>
-            <p>Great atmosphere, premium setup, and proper guidance. One of the best fitness experiences in North Paravur.</p>
-            <h4>Google Member</h4>
-          </article>
-          <article class="review-card reveal lift-card">
-            <p class="stars">★★★★★</p>
-            <p>Loved the strength zone and discipline in training. Highly recommended for fat loss and transformation goals.</p>
-            <h4>Google Member</h4>
-          </article>
+          <div class="google-review-marquee">
+            <div class="google-review-grid" id="googleReviewGrid">
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Fitasylum is one of the best gyms I have ever joined. The dedicated trainers truly care about your goals and give personal attention in every session. World-class equipment, top-notch cleanliness, and incredible value for money.</p>
+              <p class="review-meta"><span>AKSHAY KUMAR N</span><span>4 months ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">I have been going to this gym for a month and it has been amazing. Vishnu is friendly and knowledgeable. Trainer Irfan is supportive and focused on safe form. Weekly group sessions are energetic and motivating.</p>
+              <p class="review-meta"><span>Athul</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Awesome gym. The staff is super friendly and supportive, equipment is top-notch, and classes are engaging. I have seen great progress in my fitness journey. Highly recommend.</p>
+              <p class="review-meta"><span>Sreedi Krishna</span><span>6 months ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">This gym has exceeded my expectations. Top-tier equipment, motivating atmosphere, and great results since joining. Highly recommended. Thanks Vishnu.</p>
+              <p class="review-meta"><span>Divya S</span><span>6 months ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Fiit Asylam has the best equipment with imported machines and quality Indian equipment like Jerai Fitness. Packed with energy, great atmosphere, and excellent hygiene.</p>
+              <p class="review-meta"><span>Najeeb MH</span><span>6 months ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">It is not only a gym but a complete facility dedicated to exercise, including weightlifting, cardio, personal training, and more. I love it very much.</p>
+              <p class="review-meta"><span>UNNIKKUTTAN Kg</span><span>5 months ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Absolutely amazing gym. Friendly staff, clean and modern facility, and a wide range of equipment for all fitness levels.</p>
+              <p class="review-meta"><span>SHYAM LAL</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">One of the best gyms in town. Best machines in the industry, always clean and well-maintained, with a welcoming and motivating atmosphere.</p>
+              <p class="review-meta"><span>kevin austin</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Fiit Asylum is spacious, clean, and equipped with high-quality machines and weights. Trainers are professional, friendly, and always ready to guide.</p>
+              <p class="review-meta"><span>Bharath Kumar KM</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">One of the best gyms I have been to. Equipment is always clean and in good condition, and guidance from the team is excellent.</p>
+              <p class="review-meta"><span>Jean George</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Fiit Asylum Gym is exceptional. Motivating atmosphere, top-notch equipment, and outstanding service quality. Vishnu gives in-depth nutrition guidance.</p>
+              <p class="review-meta"><span>Ashwin Krishna K N</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Really love this gym. Equipment is well-maintained, place is always clean, and the atmosphere is different in the best way. Coach Irfan is always ready to help.</p>
+              <p class="review-meta"><span>Rashid Sulaiman</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Great for anyone, especially beginners and introverts. Joining FIIT ASYLUM has been a very positive and motivating experience.</p>
+              <p class="review-meta"><span>bibin antony</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Fantastic experience so far. Top-notch facilities, cleanliness, skilled coaches, positive atmosphere, and excellent membership benefits.</p>
+              <p class="review-meta"><span>Anitha Geoffrey</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Gym has good positive vibes and well-behaved trainers. Awesome environment.</p>
+              <p class="review-meta"><span>Majeed Kunjumon</span><span>6 months ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">The gym is always clean and the equipment is brand new and well-maintained. They take hygiene seriously, which makes workouts more comfortable.</p>
+              <p class="review-meta"><span>Neel Alex</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Well equipped and well maintained gym. Amazing team.</p>
+              <p class="review-meta"><span>Zameer Salam</span><span>6 months ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Proper guidance in bodybuilding, effective fat reduction training, cardio sessions, and supportive trainers. Highly recommended.</p>
+              <p class="review-meta"><span>Abhilash Karunakaran</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Solid gym, no nonsense, no broscience. Big thanks to Vishnu.</p>
+              <p class="review-meta"><span>Nevin Paul</span><span>6 months ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Great atmosphere, latest equipment, and experienced coaching trainers with good understanding.</p>
+              <p class="review-meta"><span>Anzal Akbar</span><span>10 months ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">I highly recommend FIIT ASYLUM for anyone starting fitness or taking workouts to the next level.</p>
+              <p class="review-meta"><span>Malutty Ml</span><span>a year ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Perfect atmosphere to work out with professional trainers and advanced equipment.</p>
+              <p class="review-meta"><span>RAZIK RAzzz</span><span>10 months ago</span></p>
+            </article>
+            <article class="google-review-card">
+              <p class="review-stars">★★★★★</p>
+              <p class="review-text">Appreciate the efforts from Vishnu. Thank you FIIT ASYLUM.</p>
+              <p class="review-meta"><span>Muhammed Unaiz</span><span>6 months ago</span></p>
+            </article>
+            </div>
+          </div>
+
+          <p class="google-review-note">
+            These are direct customer reviews from Google.
+          </p>
+
+          <div class="google-review-actions">
+            <a class="btn btn-solid" href="https://maps.app.goo.gl/WHNx2iG8n94ZWWVL7" target="_blank" rel="noopener noreferrer">View All Reviews</a>
+            <a class="btn btn-outline review-write-btn" href="https://maps.app.goo.gl/WHNx2iG8n94ZWWVL7" target="_blank" rel="noopener noreferrer">Write A Review</a>
+          </div>
         </div>
-
-        <a class="reviews-link" href="https://share.google/8SHKkAXfnor7ndcIw" target="_blank" rel="noopener noreferrer">
-          View all reviews on Google
-        </a>
       </div>
     </section>
 
-    <section class="section" id="location">
+    <section class="section" id="founders">
+      <div class="container founders-wrap">
+        <div class="founders-content reveal">
+          <p class="eyebrow">Meet The Founders</p>
+          <h2>PT Vishnu Ullas & Adv. Ammu Nagesh</h2>
+          <p>
+            FIIT ASYLUM was founded with a simple promise: deliver international-level coaching standards with local trust and relentless personal attention.
+          </p>
+          <ul class="credential-list">
+            <li>PT Vishnu Ullas: UK Certified Nutritionist | CIMSPA | Focus Awards | REPS UK</li>
+            <li>Former hockey player with performance-first coaching roots</li>
+            <li>Adv. Ammu Nagesh: Lawyer, Prenatal & Postpartum Strength Coach</li>
+            <li>Awareness programs and lifestyle education for long-term health</li>
+          </ul>
+        </div>
+        <div class="founders-image reveal lift-card">
+          <img src="assets/founders.jpg" alt="Founders of FIIT ASYLUM - Adv. Ammu Nagesh and PT Vishnu Ullas">
+        </div>
+      </div>
+    </section>
+
+    <section class="section location" id="location">
       <div class="container location-grid">
         <div class="map-frame reveal lift-card">
           <iframe
-            title="White Tigers map"
+            title="FIIT ASYLUM location map"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://maps.google.com/maps?q=White%20Tiger%20Gym%2C%20Airport%20road%2C%20mavinchuvadu%2C%20mannam%2C%20North%20Paravur%2C%20Kochi%2C%20Kerala%20683520&z=16&output=embed"
+            src="https://www.google.com/maps?output=embed&q=FIIT%20ASYLUM%2C%20Merchants%20Tower%2C%20Palluruthy%2C%20Kochi"
             allowfullscreen
           ></iframe>
         </div>
 
         <div class="location-panel reveal">
-          <p class="eyebrow">Find Us</p>
-          <h2>Visit White Tigers</h2>
-          <p class="address">White Tiger Gym, Airport road, mavinchuvadu, mannam, North Paravur, Kochi, Kerala 683520</p>
+          <p class="eyebrow">Visit FIIT ASYLUM</p>
+          <h2>Train In A Space That Matches Your Ambition</h2>
+          <p class="address">Merchants Tower, Palluruthy, Kerala</p>
           <div class="contact-list">
-            <p><strong>Call:</strong> <a href="tel:+919072949100">907 2949 100</a></p>
-            <p><strong>Call:</strong> <a href="tel:+919072959100">907 2959 100</a></p>
-            <p><strong>Hours:</strong> Monday - Saturday: 5:00 AM - 11:00 PM</p>
-            <p><strong>Hours:</strong> Sunday: 6:00 AM - 9:00 PM</p>
+            <p><strong>Coaching:</strong> Personal Training, Group Sessions, High Intensity Programs</p>
+            <p><strong>Specialties:</strong> PCOD | PCOS | Thyroid | Fat Loss | Bodybuilding | Rehab</p>
+            <p><strong>Signature System:</strong> Nourish | Train | Transform</p>
+          </div>
+          <div class="location-actions">
+            <a class="btn btn-solid" href="https://share.google/0QAGZU8iSe3wGcLht" target="_blank" rel="noopener noreferrer" data-magnetic>Open Google Location</a>
           </div>
         </div>
       </div>
@@ -212,10 +338,10 @@
 
     <section class="cta-band" id="contact">
       <div class="container cta-band-wrap reveal">
-        <p>Stop waiting for the perfect time. Your first training session is completely free.</p>
+        <p>If you want focused coaching, strong guidance, and measurable transformation, FIIT ASYLUM is ready for you.</p>
         <div>
-          <a class="btn btn-light" href="tel:+919072949100" data-magnetic>Book Your Free Trial</a>
-          <a class="btn btn-light-outline" href="https://wa.me/919072949100" target="_blank" rel="noopener noreferrer" data-magnetic>Chat On WhatsApp</a>
+          <a class="btn btn-light" href="https://share.google/0QAGZU8iSe3wGcLht" target="_blank" rel="noopener noreferrer" data-magnetic>Get Directions</a>
+          <a class="btn btn-light-outline" href="#home" data-magnetic>View Brand Story</a>
         </div>
       </div>
     </section>
@@ -223,10 +349,10 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <img src="assets/white-tigers-logo.png" alt="White Tigers logo">
+      <img src="assets/fiit-asylum-logo.png" alt="FIIT ASYLUM logo">
       <div>
-        <p>White Tigers Fitness Club</p>
-        <small>Strength. Health. Wealth.</small>
+        <p>FIIT ASYLUM</p>
+        <small>PT Focus Gym | Home Of PT Vishnu</small>
       </div>
     </div>
   </footer>
