@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <header class="site-header" id="header">
@@ -35,108 +35,156 @@
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="hero-bg" aria-hidden="true">
-        <img src="assets/fiit-gym-1.jpg" alt="FIIT ASYLUM premium training floor">
+    <section class="premium-hero" id="home">
+      <div class="hero-media-bg">
+        <img src="assets/fiit-gym-1.jpg" alt="FIIT ASYLUM Background">
+        <div class="media-vignette"></div>
+        <div class="premium-particles"></div>
       </div>
-      <div class="hero-overlay" aria-hidden="true"></div>
+      
+      <div class="container hero-content-premium">
+        <div class="hero-badge-premium reveal">
+          <span class="pulsing-dot"></span> PT FOCUS GYM
+        </div>
+        <h1 class="hero-title-premium reveal delay-1">
+          ELITE TRAINING<br>
+          <span class="text-accent-premium">NO COMPROMISE</span>
+        </h1>
+        <p class="hero-desc-premium reveal delay-2">
+          Experience the pinnacle of fitness. International equipment, measurable transformations, and relentless personal attention by PT Vishnu.
+        </p>
+        
+        <div class="hero-actions-premium reveal delay-3">
+          <a class="btn-premium-solid" href="#contact">Start Your Journey</a>
+          <a class="btn-premium-outline" href="#experience">Explore Facility</a>
+        </div>
+      </div>
+      
+      <div class="hero-stats-premium reveal delay-4">
+        <div class="stat-box">
+          <h4 class="stat-val">PT</h4>
+          <p class="stat-label">Personal & Group</p>
+        </div>
+        <div class="stat-box">
+          <h4 class="stat-val">360°</h4>
+          <p class="stat-label">Holistic Programs</p>
+        </div>
+      </div>
+    </section>
 
-      <div class="container hero-shell">
-        <div class="hero-content reveal">
-          <p class="hero-kicker">PT Focus Gym | Home Of PT Vishnu</p>
-          <h1>Train With Precision <span>At FIIT ASYLUM</span></h1>
-          <p class="hero-lead">
-            Premium coaching. International equipment. Measurable transformation. Built for people who want elite guidance without compromise.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-solid" href="#contact" data-magnetic>Start Consultation</a>
-            <a class="btn btn-outline" href="#experience" data-magnetic>Tour Facilities</a>
+    <section class="premium-experience" id="experience">
+      <div class="container">
+        <div class="premium-section-header text-center reveal">
+          <h6 class="premium-eyebrow">The Standard</h6>
+          <h2 class="premium-heading">Elevated Training Environment</h2>
+          <p class="premium-subheading">A space engineered for progress, discipline, and absolute focus.</p>
+        </div>
+
+        <div class="premium-bento-grid">
+          <article class="bento-card bento-large reveal lift-card" style="--bg-image: url('assets/fiit-gym-1.jpg')">
+            <div class="bento-overlay">
+              <div class="bento-icon">✦</div>
+              <div class="bento-text">
+                <h3>Performance Floor</h3>
+                <p>Power racks, free-weight systems, and an open floor built for strong programming.</p>
+              </div>
+            </div>
+          </article>
+          
+          <article class="bento-card reveal lift-card" style="--bg-image: url('assets/fiit-gym-2.jpg')">
+            <div class="bento-overlay">
+              <div class="bento-icon">✦</div>
+              <div class="bento-text">
+                <h3>Precision Equipment</h3>
+                <p>Hammer Strength and Life Fitness equipment aligned to safe progression.</p>
+              </div>
+            </div>
+          </article>
+          
+          <article class="bento-card reveal lift-card" style="--bg-image: url('assets/fiit-gym-3.jpg')">
+            <div class="bento-overlay">
+              <div class="bento-icon">✦</div>
+              <div class="bento-text">
+                <h3>Fuel Corner</h3>
+                <p>Cafeteria support for performance-friendly routines and better consistency.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="bento-card bento-wide reveal lift-card" style="--bg-image: url('assets/fiit-gym-5.jpg')">
+            <div class="bento-overlay">
+              <div class="bento-icon">✦</div>
+              <div class="bento-text">
+                <h3>Discipline Culture</h3>
+                <p>Structured floor discipline and coaching clarity to keep progress measurable.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="premium-programs" id="programs">
+      <div class="container">
+        <div class="premium-section-header reveal">
+          <h6 class="premium-eyebrow">Our Expertise</h6>
+          <h2 class="premium-heading">Built For Real-World Goals</h2>
+        </div>
+
+        <div class="premium-program-list">
+          <div class="program-row reveal lift-card">
+            <div class="program-number">01</div>
+            <div class="program-details">
+              <h3>Personal Training</h3>
+              <p>One-on-one goal mapping, form correction, progression tracking, and accountability.</p>
+            </div>
+            <div class="program-arrow">→</div>
           </div>
-        </div>
-        <div class="hero-metrics reveal">
-          <article>
-            <h3>PT</h3>
-            <p>Personal Training, Group Sessions, and High Intensity Programs</p>
-          </article>
-          <article>
-            <h3>360</h3>
-            <p>Specialized programs for PCOD, PCOS, Thyroid, Rehab, and Bodybuilding</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Elevated Environment</p>
-          <h2>International Standard Training Atmosphere</h2>
-          <p>
-            Every zone is built for intent: strength progression, movement quality, guided conditioning, and focused recovery in a premium, clean, high-energy setting.
-          </p>
-        </div>
+          <div class="program-row reveal lift-card">
+            <div class="program-number">02</div>
+            <div class="program-details">
+              <h3>Group Sessions</h3>
+              <p>High-energy coached sessions that keep intensity high and adherence stronger.</p>
+            </div>
+            <div class="program-arrow">→</div>
+          </div>
 
-        <div class="showcase-grid">
-          <article class="showcase-card reveal lift-card large" style="--card-img:url('assets/fiit-gym-1.jpg')">
-            <div>
-              <h3>Performance Floor</h3>
-              <p>Power racks, free-weight systems, and an open floor built for strong programming.</p>
+          <div class="program-row reveal lift-card">
+            <div class="program-number">03</div>
+            <div class="program-details">
+              <h3>Nutrition Guidance</h3>
+              <p>Internationally certified nutrition support integrated with your training cycle.</p>
             </div>
-          </article>
-          <article class="showcase-card reveal lift-card" style="--card-img:url('assets/fiit-gym-2.jpg')">
-            <div>
-              <h3>Precision Equipment</h3>
-              <p>Hammer Strength and Life Fitness equipment aligned to safe progression.</p>
-            </div>
-          </article>
-          <article class="showcase-card reveal lift-card" style="--card-img:url('assets/fiit-gym-3.jpg')">
-            <div>
-              <h3>Fuel Corner</h3>
-              <p>Cafeteria support for performance-friendly routines and better consistency.</p>
-            </div>
-          </article>
-          <article class="showcase-card reveal lift-card" style="--card-img:url('assets/fiit-gym-5.jpg')">
-            <div>
-              <h3>Discipline Culture</h3>
-              <p>Structured floor discipline and coaching clarity to keep progress measurable.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+            <div class="program-arrow">→</div>
+          </div>
 
-    <section class="section dark" id="programs">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Programs</p>
-          <h2>Built For Real-World Goals</h2>
-        </div>
+          <div class="program-row reveal lift-card">
+            <div class="program-number">04</div>
+            <div class="program-details">
+              <h3>Special Focus Programs</h3>
+              <p>PCOD, PCOS, thyroid support, fat loss, weight loss, and sustainable body recomposition.</p>
+            </div>
+            <div class="program-arrow">→</div>
+          </div>
 
-        <div class="program-grid">
-          <article class="program-card reveal lift-card">
-            <h3>Personal Training</h3>
-            <p>One-on-one goal mapping, form correction, progression tracking, and accountability.</p>
-          </article>
-          <article class="program-card reveal lift-card">
-            <h3>Group Sessions</h3>
-            <p>High-energy coached sessions that keep intensity high and adherence stronger.</p>
-          </article>
-          <article class="program-card reveal lift-card">
-            <h3>Nutrition Guidance</h3>
-            <p>Internationally certified nutrition support integrated with your training cycle.</p>
-          </article>
-          <article class="program-card reveal lift-card">
-            <h3>Special Focus Programs</h3>
-            <p>PCOD, PCOS, thyroid support, fat loss, weight loss, and sustainable body recomposition.</p>
-          </article>
-          <article class="program-card reveal lift-card">
-            <h3>Bodybuilding</h3>
-            <p>Structured hypertrophy and strength blocks for competitive and lifestyle athletes.</p>
-          </article>
-          <article class="program-card reveal lift-card">
-            <h3>Injury & Rehab</h3>
-            <p>Progressive return-to-performance plans with mobility, corrective, and strength work.</p>
-          </article>
+          <div class="program-row reveal lift-card">
+            <div class="program-number">05</div>
+            <div class="program-details">
+              <h3>Bodybuilding</h3>
+              <p>Structured hypertrophy and strength blocks for competitive and lifestyle athletes.</p>
+            </div>
+            <div class="program-arrow">→</div>
+          </div>
+
+          <div class="program-row reveal lift-card">
+            <div class="program-number">06</div>
+            <div class="program-details">
+              <h3>Injury & Rehab</h3>
+              <p>Progressive return-to-performance plans with mobility, corrective, and strength work.</p>
+            </div>
+            <div class="program-arrow">→</div>
+          </div>
         </div>
       </div>
     </section>
